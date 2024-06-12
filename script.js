@@ -28,8 +28,13 @@ let currentIndex = 0;
 
 function showImage(index) {
     const imageElement = document.getElementById('tshirt-image');
-    imageElement.src = images[index];
+    imageElement.classList.add('fade-out');
+    setTimeout(() => {
+        imageElement.src = images[index];
+        imageElement.classList.remove('fade-out');
+    }, 200); // Match the duration of the CSS transition
 }
+
 
 function prevImage() {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -49,7 +54,11 @@ let currentIndexB = 0;
 
 function showImageB(indexB) {
     const imageElementB = document.getElementById('bonnet-image');
-    imageElementB.src = imagesB[indexB];
+    imageElementB.classList.add('fade-out');
+    setTimeout(() => {
+        imageElementB.src = imagesB[indexB];
+        imageElementB.classList.remove('fade-out');
+    }, 200); // Match the duration of the CSS transition
 }
 
 function prevImageB() {

@@ -167,7 +167,11 @@ nav ul li a:hover {
 .carousel-image img {
     width: 100%;
     display: block;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.carousel-image img.fade-out {
+    opacity :0;
 }
 
 
