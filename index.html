@@ -4,70 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esimerch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+        @font-face {
+            font-family: supercharge;
+            src: url(supercharge.otf);
+            }
+        body {
+            background-color: rgb(23, 23, 23);
+            }
+        .title {
+            color: azure; 
+            font-weight: bold; 
+            font-size: 40px;
+            position: center;
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+            align-items: center;
+            text-align:center;
+            font-family: "supercharge";
+            }
+        .section {
+            color: azure;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            align-items: center;
+            margin-top: 20px;
+            }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+            }
+        .product img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid green;
+            }
+        .product-name {
+            font-size: 20px;
+            margin-top: 10px;
+            color: aliceblue;
+            }
+        .product-section {
+            position: center;
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+            align-items: center;
+            text-align:center;
+            }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Esimerch Logo">
-        </div>
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Catalogue</a>
-            <a href="#">Personnalisation</a>
-            <a href="#">À Propos</a>
-            <a href="#">Contact</a>
-            <a href="#" class="cart">Panier</a>
-        </nav>
-    </header>
-    <div class="hero">
-        <h1> EsiMerch </h1>
+    <div class="title">Esimerch</div>
+
+
+
+<div class="section">T-Shirts</div>
+<div class="product-section">
+    <div class="product">
+        <img src="https://cdn.monsieurtshirt.com/images/287888/product_large/t-shirt-homme-logo-personnalise.jpg?1700494444000&additionalExtensions=WEBP&additionalExtensions=AVIF" alt="T-shirt 1">
+        <div class="product-name">T-shirt 1</div>
     </div>
-    <div class="content">
-        <section id="catalogue">
-            <h2>Catalogue</h2>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="tshirt.jpg" alt="T-shirt">
-                    <h3>T-shirt</h3>
-                    <p>vPersonnalisez votre t-shirt avec des poulpes mignons.v</p>
-                    <button>Personnaliser</button>
-                </div>
-                <div class="product">
-                    <img src="polo.jpg" alt="Polo">
-                    <h3>Polo</h3>
-                    <p>Personnalisez votre polo avec des poulpes mignons.</p>
-                    <button>Personnaliser</button>
-                </div>
-                <div class="product">
-                    <img src="totebag.jpg" alt="Tote Bag">
-                    <h3>Tote Bag</h3>
-                    <p>Personnalisez votre tote bag avec des poulpes mignons.</p>
-                    <button>Personnaliser</button>
-                </div>
-            </div>
-        </section>
-        <section id="about">
-            <h2>À Propos</h2>
-            <p>Esimerch est une boutique spécialisée dans la vente de vêtements personnalisés avec des designs uniques et mignons. Nous nous engageons à offrir des produits de haute qualité et un service client exceptionnel.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <form>
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
+    <div class="product">
+        <img src="https://praxiscycles.com/wp-content/uploads/TSHIRT-70s-STRIPES-1.1-1.jpg" alt="T-shirt 2">
+        <div class="product-name">T-shirt 2</div>
     </div>
-    <footer>
-        <p>&copy; 2024 Esimerch. Tous droits réservés.</p>
-    </footer>
-    <script src="scripts.js"></script>
+</div>
+
+<div class="section">Polos</div>
+<div class="product">
+    <img src="https://example.com/polo1.jpg" alt="Polo 1">
+    <div class="product-name">Polo 1</div>
+</div>
+<div class="product">
+    <img src="https://example.com/polo2.jpg" alt="Polo 2">
+    <div class="product-name">Polo 2</div>
+</div>
+
+<div class="section">Casquettes</div>
+<div class="product">
+    <img src="https://example.com/casquette1.jpg" alt="Casquette 1">
+    <div class="product-name">Casquette 1</div>
+</div>
+<div class="product">
+    <img src="https://example.com/casquette2.jpg" alt="Casquette 2">
+    <div class="product-name">Casquette 2</div>
+</div>
+
+
 </body>
 </html>
-
