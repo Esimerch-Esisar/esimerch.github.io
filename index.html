@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level1</title>
+    <title>Esimerch</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body style="color:white">
-    ESIMERCH
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Esimerch Logo">
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Catalogue</a>
+            <a href="#">Personnalisation</a>
+            <a href="#">À Propos</a>
+            <a href="#">Contact</a>
+            <a href="#" class="cart">Panier</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Vêtements personnalisés avec des poulpes mignons</h1>
+    </div>
+    <div class="content">
+        <section id="catalogue">
+            <h2>Catalogue</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="tshirt.jpg" alt="T-shirt">
+                    <h3>T-shirt</h3>
+                    <p>Personnalisez votre t-shirt avec des poulpes mignons.</p>
+                    <button>Personnaliser</button>
+                </div>
+                <div class="product">
+                    <img src="sweat.jpg" alt="Sweat">
+                    <h3>Sweat</h3>
+                    <p>Personnalisez votre sweat avec des poulpes mignons.</p>
+                    <button>Personnaliser</button>
+                </div>
+                <div class="product">
+                    <img src="polo.jpg" alt="Polo">
+                    <h3>Polo</h3>
+                    <p>Personnalisez votre polo avec des poulpes mignons.</p>
+                    <button>Personnaliser</button>
+                </div>
+                <div class="product">
+                    <img src="totebag.jpg" alt="Tote Bag">
+                    <h3>Tote Bag</h3>
+                    <p>Personnalisez votre tote bag avec des poulpes mignons.</p>
+                    <button>Personnaliser</button>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <h2>À Propos</h2>
+            <p>Esimerch est une boutique spécialisée dans la vente de vêtements personnalisés avec des designs uniques et mignons. Nous nous engageons à offrir des produits de haute qualité et un service client exceptionnel.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Esimerch. Tous droits réservés.</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
