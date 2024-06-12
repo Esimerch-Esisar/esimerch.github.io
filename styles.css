@@ -1,117 +1,220 @@
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #FCF6D9;
-    color: #333;
+    background-color: #111; /* Couleur de fond sombre */
+    color: #fff; /* Couleur du texte */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333; /* Couleur de fond du header */
+    z-index: 1000; /* Assurez-vous que le header apparaÃ®t au-dessus du contenu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, opacity 0.3s, backdrop-filter 0.3s; /* Animation de transition pour les propriÃ©tÃ©s modifiÃ©es */
+}
+
+header.scroll {
+    background-color: rgba(51, 51, 51, 0.5); /* Couleur de fond du header avec 50% d'opacitÃ© */
+    backdrop-filter: blur(100px); /* Ajout d'un flou */
+    opacity: 50%;
+}
+
+header.hover {
+    opacity:100%;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    color: #e3e2f0; /* Rouge YouTube */
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #B09AFF;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+nav ul li {
+    display: inline;
+    margin-left: 20px;
 }
 
-header .logo img {
-    height: 50px;
-}
-
-nav {
-    display: flex;
-    gap: 15px;
-}
-
-nav a {
+nav ul li a {
     text-decoration: none;
-    color: white;
-    padding: 10px 15px;
+    color: #fff; /* Blanc */
+    transition: color 0.3s ease;
 }
 
-nav a.cart {
-    background-color: #FFC2E2;
-    border-radius: 5px;
-    color: #333;
+nav ul li a:hover {
+    color: #b15ca0; /* Rouge YouTube */
+}
+
+
+
+/* Illustration et court texte introductif */
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .hero {
-    background-color: #CDB1FF;
-    height: 300px;
+    padding: 0px 0;
+}
+
+.hero-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #FFC2E2;
-    font-size: 2em;
-    text-align: center;
 }
 
-.content {
-    padding: 20px;
+.image-container {
+    flex: 1;
+    padding-right: 20px; /* Espacement entre l'image et le texte */
+    border-right: 1px solid #ccc; /* Bordure Ã  droite de l'image */
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.product {
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #E7C6FF;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.product img {
-    width: 100%;
+.image-container img {
+    width: 100%; /* Taille ajustable de l'image */
     height: auto;
-    border-radius: 10px;
 }
 
-button {
-    background-color: #B09AFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+.text-container {
+    flex: 1;
+    padding-left: 20%; /* Espacement entre le texte et l'image */
+    padding-right: 20%;
+    width: 100%; /* Largeur du texte avec 20% de marge de chaque cÃ´tÃ© */
+    align-items: center;
 }
 
-button:hover {
-    background-color: #7D71A7;
+.text-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff; /* Couleur du texte par dÃ©faut */
+    background-image: linear-gradient(to right, transparent 50%, #b15ca0 50%); /* DÃ©gradÃ© du centre vers l'extÃ©rieur */
+    background-size: 200% 100%; /* Taille du dÃ©gradÃ© initiale */
+    background-position: 100%; /* Position initiale du dÃ©gradÃ© */
+    transition: background-size 0.3s, color 0.3s; /* Transition pour le dÃ©gradÃ© et la couleur */
+    border-radius: 15px; /* Border radius pour arrondir les coins */
+    padding-right: 20px; /* Ajustement pour Ã©viter que le rectangle ne dÃ©passe pas trop du texte Ã  droite */
+    text-decoration-line: underline;
+    align-items: center;
 }
 
-footer {
-    background-color: #B09AFF;
+
+.text-container h2:hover {
+    background-size: 0% 100%; /* RÃ©duire la taille du dÃ©gradÃ© Ã  0% au survol */
+    color: #b15ca0; /* Changer la couleur du texte en rouge */
+}
+
+
+.text-container p {
+    font-size: 18px;
+}
+
+.intro-text {
     text-align: center;
-    padding: 10px;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    margin-top: 30px;
+    font-size: 16px;
+    max-width: 50%;
 }
 
-form {
+
+
+/*SECTION TSHIRT */
+.tshirt-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.carousel {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-input, textarea {
-    padding: 10px;
-    border: 1px solid #CDB1FF;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    background-color: #FFC2E2;
-    color: #333;
-    border: none;
-    padding: 10px 15px;
+.carousel-arrow {
     cursor: pointer;
-    border-radius: 5px;
+    padding: 0 20px;
+}
+
+.carousel-arrow img {
+    width: 60px;
+    height: 60px;
+}
+
+.carousel-image {
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.carousel-image img {
+    width: 100%;
+    display: block;
+    transition: opacity 5s ease-in-out;
+}
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte */
+    padding: 20px 0; /* Espacement intÃ©rieur du footer */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info,
+.copyright {
+    flex: 0 0 auto; /* EmpÃªcher les Ã©lÃ©ments de rÃ©trÃ©cir */
+    margin-right: 20px; /* Espacement entre les Ã©lÃ©ments */
+}
+
+.social-links a {
+    color: #fff; /* Couleur des icÃ´nes de rÃ©seaux sociaux */
+    font-size: 20px;
+    margin-right: 10px;
+    transition: color 0.3s; /* Animation de transition */
+}
+
+.social-links a:hover {
+    color: #b15ca0; /* Couleur au survol des icÃ´nes de rÃ©seaux sociaux */
+}
+
+.contact-info a {
+    color: inherit; /* Pour hÃ©riter de la couleur du texte par dÃ©faut */
+    text-decoration: none; /* Pour supprimer le soulignement */
+    transition: color 0.3s; /* Animation de transition */
+}
+
+.contact-info a:hover {
+    color: #b15ca0;  
 }
