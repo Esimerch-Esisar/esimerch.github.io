@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FCF6D9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #B09AFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+}
+
+nav a.cart {
+    background-color: #FFC2E2;
+    border-radius: 5px;
+    color: #333;
+}
+
+.hero {
+    background-color: #CDB1FF;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFC2E2;
+    font-size: 2em;
+    text-align: center;
+}
+
+.content {
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #E7C6FF;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #B09AFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #7D71A7;
+}
+
+footer {
+    background-color: #B09AFF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #CDB1FF;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #FFC2E2;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
