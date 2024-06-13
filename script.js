@@ -23,7 +23,7 @@ header.addEventListener('mouseout', function() {
     }
 });
 
-const images = ['images/tshirt1.jpg', 'images/tshirt2.jpg', 'images/tshirt3.jpg'];
+const images = ['images/polo1.jpg', 'images/polo2.jpg', 'images/polo3.jpg'];
 let currentIndex = 0;
 
 function showImage(index) {
