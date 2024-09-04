@@ -1,0 +1,50 @@
+<html><head><base href="https://esimerch.com/"><title>ESI Merch - Coming Soon</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        text-align: center;
+    }
+    h1 {
+        font-size: 120px;
+        margin: 0;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+</style>
+</head>
+<body>
+    <div class="content">
+        <h1>SOON</h1>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const h1 = document.querySelector('h1');
+    
+    // Add a subtle hover effect
+    h1.addEventListener('mouseover', () => {
+        h1.style.textShadow = '0 0 20px rgba(255,255,255,0.8)';
+    });
+    
+    h1.addEventListener('mouseout', () => {
+        h1.style.textShadow = '0 0 10px rgba(255,255,255,0.5)';
+    });
+});
+</script>
+</body></html>
