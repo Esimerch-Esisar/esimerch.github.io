@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>Product</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+	<!-- Header -->
+	<header class="header-v4">
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
+			<!-- Topbar -->
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container">
+					<div class="left-top-bar">
+						Y'a des portes en stock si vous voulez
+					</div>
+
+					<div class="right-top-bar flex-w h-full">
+						<a href="faq.html" class="flex-c-m trans-04 p-lr-25">
+							Aide & FAQs
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrap-menu-desktop how-shadow1">
+				<nav class="limiter-menu-desktop container">
+					
+					<!-- Logo desktop -->		
+					<a href="#" class="logo">
+						<img href="index.html" src="images/icons/logo-01.png" alt="IMG-LOGO">
+					</a>
+
+					<!-- Menu desktop -->
+					<div class="menu-desktop">
+						<ul class="main-menu">
+							<li>
+								<a href="index.html">Accueil</a>
+							</li>
+
+							<li class="active-menu">
+								<a href="product.html">Acheter</a>
+							</li>
+
+							<li>
+								<a href="blog.html">Avis clients</a>
+							</li>
+
+							<li>
+								<a href="about.html">À propos</a>
+							</li>
+
+							<li>
+								<a href="contact.html">Contact</a>
+							</li>
+						</ul>
+					</div>	
+				</nav>
+			</div>	
+		</div>
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="topbar-mobile">
+				<li>
+					<div class="left-top-bar" style="display: flex;justify-content:space-between;align-items: center;">
+						Portes en stock, prix libre <a href="faq.html" style="color:#B2B2B2;justify-content:right;"> Aide & FAQs </a>
+					</div>
+				</li>
+
+			</ul>
+
+			<ul class="main-menu-m">
+				<li>
+					<a href="index.html">Accueil</a>
+				</li>
+
+				<li>
+					<a href="product.html">Acheter</a>
+				</li>
+
+				<li>
+					<a href="blog.html">Avis clients</a>
+				</li>
+
+				<li>
+					<a href="about.html">À propos</a>
+				</li>
+
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	
+
+	
+	<!-- Product -->
+	<div class="bg0 m-t-23 p-b-140">
+		<div class="container">
+			<div class="flex-w flex-sb-m p-b-52">
+				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+						Tout
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bonnets">
+						Bonnets
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".gants">
+						Gants
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".cachecou">
+						Cache-cou
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".portes">
+						Portes
+					</button>
+				</div>
+			</div>
+
+			<div class="row isotope-grid">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bonnets">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="0" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text1" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Esprit Ruffle Shirt
+								</a>
+
+								<span id="Price1" class="stext-105 cl3">
+									$16.64
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bonnets">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-02.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="1" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text2" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Herschel supply
+								</a>
+
+								<span id="Price2" class="stext-105 cl3">
+									$35.31
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item gants">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-03.jpg" alt="IMG-PRODUCT">
+
+							<a href="#"  id="2" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text3" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Front Pocket Jumper
+								</a>
+
+								<span id="Price3" class="stext-105 cl3">
+									$34.75
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item gants">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-04.jpg" alt="IMG-PRODUCT">
+
+							<a href="#"  id="3" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text4" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Vintage Inspired Classic 
+								</a>
+
+								<span id="Price4" class="stext-105 cl3">
+									$93.20
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item cachecou">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-05.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="4" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text5" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Converse All Star Hi Plimsolls
+								</a>
+
+								<span id="Price5" class="stext-105 cl3">
+									$75.00
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item cachecou">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-06.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="5" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text6" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Femme T-Shirt In Stripe
+								</a>
+
+								<span id="Price6" class="stext-105 cl3">
+									$25.85
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item cachecou">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-07.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="6" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text7" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Femme T-Shirt In Stripe
+								</a>
+
+								<span id="Price7" class="stext-105 cl3">
+									$25.85
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				
+
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item portes">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-08.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" id="7" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Plus d'infos
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a id="Text8" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Lot de 4 portes dégondables
+								</a>
+
+								<span id="Price8">" class="stext-105 cl3">
+									999.99€
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>		
+
+	
+
+				
+
+				
+
+			</div>
+			
+			<div style="display: flex; justify-content: center; align-items: center; max-width: 100%;">
+				<a onclick="redirect()" style="min-width:250px;" href="product.html" class="flex-c-m mtext-101 cl0 size-202 size-304 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+					Passer commande
+				</a>
+			 </div>
+		</div>
+	</div>
+
+
+
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="product.html?filter=bonnets" class="stext-107 cl7 hov-cl1 trans-04">
+								Bonnets
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="product.html?filter=gants" class="stext-107 cl7 hov-cl1 trans-04">
+								Gants
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="product.html?filter=cachecou" class="stext-107 cl7 hov-cl1 trans-04">
+								Cache-cou
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Aide
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="shipping.html" class="stext-107 cl7 hov-cl1 trans-04">
+								Délais de livraison
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="faq.html" class="stext-107 cl7 hov-cl1 trans-04">
+								FAQs
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="conditions.html" class="stext-107 cl7 hov-cl1 trans-04">
+								Conditions d'utilisation
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Nous contacter
+					</h4>
+
+					<p class="stext-107 cl7 size-201">
+						Si vous avez la moindre question, n'hésitez pas à nous contacter sur <a href="https://instagram.com/esimerch" target="_blank">Instagram</a> !
+					</p>
+
+					<div class="p-t-27">
+						<a href="mailto:contact@esimerch.fr" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-envelope"></i>
+						</a>
+
+						<a href="https://instagram.com/esimerch" target="_blank" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fab fa-instagram"></i>
+						</a>
+
+						<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fab fa-youtube"></i>
+						</a>
+
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Accès au google form
+					</h4>
+
+					<form>
+						<div class="p-t-18">
+							<button onclick="redirect()" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Commander
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="p-t-40">
+
+
+
+				<p class="stext-107 cl6 txt-center">
+					<!-- Link back to Esimerch can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | Fais avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="https://esimerch.fr" target="_blank">Esimerch</a> &amp; distribué par <a href="https://esimerch.fr" target="_blank">Esimerch.</a> Un grand merci à <a href="https://esimerch.fr" target="_blank">Esimerch</a> pour l'aide ! 
+<!-- Link back to Esimerch can't be removed. Template is licensed under CC BY 3.0. -->
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<!-- Modal1 -->
+	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+		<div class="overlay-modal1 js-hide-modal1"></div>
+
+		<div class="container">
+			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
+				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
+					<img src="images/icons/icon-close.png" alt="CLOSE">
+				</button>
+
+				<div class="row">
+					<div class="col-md-6 col-lg-7 p-b-30">
+						<div class="p-l-25 p-r-30 p-lr-0-lg">
+							<div class="wrap-slick3 flex-sb flex-w">
+								<div class="wrap-slick3-dots"></div>
+								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+								<div class="slick3 gallery-lb">
+									<div id="Image1Thumb" class="item-slick3" data-thumb="images/product-detail-01.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img id="Image1" src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+
+											
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img id="Image2" src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
+
+											
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img id="Image3" src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
+
+											
+										</div>
+									</div>
+
+									<div class="item-slick3" data-thumb="images/product-detail-04.jpg">
+										<div class="wrap-pic-w pos-relative">
+											<img id="Image4" src="images/product-detail-04.jpg" alt="IMG-PRODUCT">
+
+											
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-5 p-b-30">
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<h4 id="Title1" class="mtext-105 cl2 js-name-detail p-b-14">
+								Lightweight Jacket
+							</h4>
+
+							<span id="Price0" class="mtext-106 cl2">
+								$58.79
+							</span>
+
+							<p id="Description1" class="stext-102 cl3 p-t-23">
+								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+							</p>
+							
+							<!--  -->
+	
+
+							<!--  -->
+							<div class="flex-w flex-m  p-t-40 respon7">
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<i class="fab fa-facebook"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<i class="fab fa-twitter"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<i class="fab fa-google-plus-g"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="YouTube">
+									<i class="fab fa-youtube"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Instagram">
+									<i class="fab fa-instagram"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Snapchat">
+									<i class="fab fa-snapchat-ghost"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="TikTok">
+									<i class="fab fa-tiktok"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="LinkedIn">
+									<i class="fab fa-linkedin"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Pinterest">
+									<i class="fab fa-pinterest"></i>
+								</a>
+							
+								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="WhatsApp">
+									<i class="fab fa-whatsapp"></i>
+								</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		function redirect(){
+			window.open("https://docs.google.com/forms/d/e/1FAIpQLSdYS0UKS6vmafm49iy6RmWinSu3Ppr_FEoEOwdg4uh7tWGTDg/viewform", "_blank");
+		}
+	</script>
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/slick/slick.min.js"></script>
+	<script src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/parallax100/parallax100.js"></script>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/sweetalert/sweetalert.min.js"></script>
+	<script>
+		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+
+
+
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
