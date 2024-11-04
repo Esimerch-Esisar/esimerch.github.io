@@ -302,10 +302,10 @@
     $('.js-show-modal1').on('click',function(e){
 
         var Description = [
-            'Bonnet gris sidéral, alliant confort et style, parfait pour rester bien au chaud avec élégance.',
-            'Bonnet noir charbon, inspiré par la chaleur d’un feu de bois, pour un look intemporel et cosy.',
-            'Gants noirs carbone, conçus pour allier chaleur et modernité avec une touche de sophistication.',
-            'Gants gris sidéral, idéaux pour protéger vos mains tout en gardant un style sobre et chic.',
+            'Bonnet gris sidéral, alliant confort et style, parfait pour rester bien au chaud avec élégance. <br> Le logo sera brodé !',
+            'Bonnet noir charbon, inspiré par la chaleur d’un feu de bois, pour un look intemporel et cosy. <br> Le logo sera brodé !',
+            'Gants noirs carbone, conçus pour allier chaleur et modernité avec une touche de sophistication. <br> Nous avons enlevé les contours blancs pour faire moins effet "sticker" !',
+            'Gants gris sidéral, idéaux pour protéger vos mains tout en gardant un style sobre et chic.<br> Nous avons enlevé les contours blancs pour faire moins effet "sticker" !',
             'Cache-cou blanc éclatant #FFF, douceur et chaleur réunies pour affronter les jours froids.',
             'Cache-cou noir intense #000, une protection parfaite pour rester au chaud tout en restant élégant.',
             'Cache-cou violet poulpy, une touche de couleur et de confort pour ajouter du peps à votre tenue.',
