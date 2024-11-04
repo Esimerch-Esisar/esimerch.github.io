@@ -173,9 +173,9 @@
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
 							Nous envoyer un message
 						</h4>
-
+						
 						<div class="bor8 m-b-20 how-pos4-parent">
-							<input id="email" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Votre adresse mail">
+							<input type="email" id="email" class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" name="email" placeholder="Votre adresse mail">
 							<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
 						</div>
 
@@ -352,6 +352,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
 			var message = document.getElementById("message").value;
 			console.log(email);
 			console.log(message);
+			if(!email.includes('@') || !email.includes('.')){alert("Entrez une adresse-mail valide !");return 0;}
 			const request = new XMLHttpRequest();
             request.open("POST", "https://discord.com/api/webhooks/1301862778948292669/sE96GOS_LW2-NkUNwpFlF6K6uZX_aej4XwBhKAXwuCdO946eWCzh_a9cKDbzDoKR3-CD");
             request.setRequestHeader('Content-type', 'application/json');
@@ -376,6 +377,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
     			},
  			 ];
             request.send(JSON.stringify({ embeds }));
+			email.value="";
+			message.value="";
+			alert("Message envoyé avec sucès !")
 	    }
 	</script>
 <!--===============================================================================================-->	
