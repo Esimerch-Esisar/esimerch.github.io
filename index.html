@@ -1,111 +1,128 @@
+<html>
+  <head>
+    <title> Esimerch </title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esimerch</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-vMzEZvO9B+B1dZkZ4sJESQOczfkYgjgBwQm1k76Za8evpnhkLK9ksOtCRbpYWwLr" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="images/logo.png" />
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  #countdown {
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  }
+  .purple {
+    color: #8a2be2;
+  }
+  a {
+  text-decoration: none;
+  }
+  @media (max-width: 950px) {
+  .container {
+    padding: 80px;
+    width: 90%; 
+    height: auto; 
+  }
+}
 
+</style>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <h1 class="logo">Esimerch</h1>
-        <nav>
-            <ul>
-                <li><a href="#Header" class="active">Accueil</a></li>
-                <li><a href="#Tshirts">T-shirts</a></li>
-                <li><a href="#Bonnets">Bonnets</a></li>
-                <li><a href="#Footer">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<br> <br>
-
-<section id="Header" class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="image-container">
-                <img src="images/logo.png" alt="Image d'illustration">
-            </div>
-            <div class="text-container">
-                <a href="https://docs.google.com/forms/d/1lxm5FPmJA1K3BG-GNatNZJrFOFQBvxCJZx8nSiNhdew/">
-                    <h2>Commander</h2>
-                </a>
-                <p>Une boutique de merch personalisé de haute qualitée</p>
-            </div>
-        </div>
-        <p class="intro-text">Vous cherchez de nouveaux habits ? <br> Fabriqués en France ? <br> Vous êtes au bon endroit ! </p>
-    </div>
-</section>
-
-<hr class="separator">
+  <div class="container">
+    <h1>  <span>Esimerch.fr</span>  </h1>
+    <div id="countdown"></div>
+    <a href="https://www.instagram.com/esimerch" target="_blank" style="color:white;">
+  <i class="fab fa-instagram" style="font-size: 50px;"></i>
+</a>
+<a href="https://discord.gg/arNuJ5PyjK" target="_blank" style="color:white;">
+  <i class="fab fa-discord" style="font-size: 50px;"></i>
+</a>
 
 
-<section id="Tshirts" class="tshirt-section">
-    <div class="container">
-        <h2>Nos Polos</h2>
-        <div class="carousel">
-            <div class="carousel-arrow left-arrow" onclick="prevImage()">
-                <img src="images/left.png" alt="Flèche gauche">
-            </div>
-            <div class="carousel-image">
-                <img id="tshirt-image" src="images/polo1.jpg" alt="Polo Image">
-            </div>
-            <div class="carousel-arrow right-arrow" onclick="nextImage()">
-                <img src="images/right.png" alt="Flèche droite">
-            </div>
-        </div>
-    </div>
-</section>
+    
+  </div>
+  
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date("November 4, 2024 16:30:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
 
-<hr class="separator">
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-<section id="Bonnets" class="tshirt-section">
-    <div class="container">
-        <div class="carousel">
-            <div class="carousel-arrow left-arrow" onclick="prevImageB()">
-                <img src="images/left.png" alt="Flèche gauche">
-            </div>
-            <div class="carousel-image">
-                <img id="bonnet-image" src="images/bonnet1.jpg" alt="Bonnet Image">
-            </div>
-            <div class="carousel-arrow right-arrow" onclick="nextImageB()">
-                <img src="images/right.png" alt="Flèche droite">
-            </div>
-        </div>
-        <h2>Nos Bonnets</h2>
+      document.getElementById("countdown").innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    </div>
-</section>
+      if (timeLeft < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "Esierch is here!";
+      }
+    }
 
-<hr class="separator">
+    function sendData(){
+    var request = new XMLHttpRequest();
+    var url = 'https://discord.com/api/webhooks/1221932777499263158/ThVWkczP3AK6wKPqbtAucU6m5AULUA-TD1RhwaqyUaJPmm3h7d7p_owAQbPPEHsYGlos';
+    request.open("POST", url);
+    request.setRequestHeader('Content-type', 'application/json');
 
 
-<footer>
-    <div id="Footer" class="container">
-        <div class="copyright">
-            <p>© Esimerch 2024</p>
-        </div>
-        <div class="social-links">
-            <a href="https://www.instagram.com/esimerch">Instagram</a>
-        </div>
-        <div class="contact-info" >
-            <a href="mailto:contact[at]esimerch.fr">Nous contacter</a>
-        </div>
-    </div>
-</footer>
+    const params = {
+        username: "Esimerch", 
+        embeds: [
+            {
+                title: "Esimerch",
+                color: 993399, 
+                timestamp: new Date()
+            }
+        ]
+    };
+
+    request.send(JSON.stringify(params));
+}
+sendData();
+
+    updateCountdown();
+    const countdownTimer = setInterval(updateCountdown, 1000);
+  </script>
+</body></html>
 
 
-
-<script src="script.js" defer></script>
-
-</body>
-</html>
-	
+<!-- 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣔⣲⣖⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⢿⣪⣵⣶⣶⣮⣝⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⣿⣿⡿⢉⡙⣟⠛⢿⣿⣟⡆⠀⠀⠀⠀⢀⣢⡔⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣿⣿⣷⡘⢿⣼⣃⣾⣿⢯⠃⠀⠀⠀⡀⣶⣿⡝⠀⠀
+⠀⠀⠀⢀⣀⡀⠐⣮⣿⣼⣧⣿⣿⣿⣿⣿⣿⣿⢿⣥⢶⣦⢀⣦⣿⡿⢏⠐⠀⠀
+⠀⣤⣿⣿⢶⠟⡀⢈⠡⣯⣿⣷⣿⣿⣿⣿⣿⣿⣷⣿⡿⣷⣿⡿⡏⠃⠀⠀⠀⠀
+⠀⠻⣷⣿⢯⣾⣵⣿⣶⣿⣶⣾⣿⣷⣿⣯⣷⣿⣻⣿⡿⢿⣿⣾⣷⡷⠎⠀⠀⠀
+⠀⠀⠀⠈⠉⠉⣉⡩⣭⣯⣽⣿⣯⣿⣷⣿⢿⣏⡿⢿⡿⣿⣿⣶⣥⣾⣴⣶⣤⠀
+⠀⠀⠀⣀⢶⣽⣶⢿⡟⠿⠙⠓⣉⣘⣙⣫⢿⣿⣿⣆⠉⠑⠋⠛⠹⢋⠛⠙⠊⠄
+⠀⠀⠀⠘⠋⠛⠈⠁⠀⠀⢼⠿⡷⢿⠿⡿⢿⣟⠻⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈⠀⠀⠀⠀⠀⠀⠀⠀
+Copyright Esimerch 2024-2025
+-->
