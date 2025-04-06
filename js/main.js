@@ -302,14 +302,14 @@
     $('.js-show-modal1').on('click',function(e){
 
         var Description = [
-            'Polo gris sidéral, un classique intemporel qui allie confort et élégance. Idéal pour une tenue décontractée mais stylée. <br> Logo brodé !',
-            'Polo noir charbon, un vêtement incontournable pour ceux qui recherchent un look moderne et élégant. Parfait pour toutes les occasions. <br> Logo brodé !',
-            'Polo blanc neige, une touche de fraîcheur pour vos tenues. Idéal pour l’été, tout en restant chic et confortable. <br> Logo brodé !',
-            'Gourde blanc éclatant, conçue pour garder vos boissons au frais toute la journée. Un accessoire pratique et stylé pour vos aventures. <br> Le logo sera imprimé !',
+            'Polo gris sidéral, un classique intemporel qui allie confort et élégance. Idéal pour une tenue décontractée mais stylée. <br> Logo brodé ! <br> <strong> Disponible en coupe Homme et Femme <br> Existe aussi en noir et en blanc </strong>',
+            'Polo noir charbon, un vêtement incontournable pour ceux qui recherchent un look moderne et élégant. Parfait pour toutes les occasions. <br> Logo brodé ! <br> <strong> Disponible en coupe Homme et Femme <br> Existe aussi en gris et en blanc </strong> ',
+            'Polo blanc neige, une touche de fraîcheur pour vos tenues. Idéal pour l’été, tout en restant chic et confortable. <br> Logo brodé ! <br> <strong> Disponible en coupe Homme et Femme <br> Existe aussi en gris et en noir </strong>',
+            'Gourde blanche (80cL, Isotherme), conçue pour garder vos boissons au frais toute la journée. Un accessoire pratique et stylé pour vos aventures. <br> Le logo sera imprimé !',
             'Tote-bag beige Esisar, spacieux et pratique pour transporter vos essentiels. Un design simple et élégant pour un usage quotidien. <br> Le logo sera imprimé !',
-            'Porte-clé porte, petit accessoire pratique pour garder vos clés en toute sécurité, tout en ajoutant une touche originale à vos affaires. <br> Le logo sera gravé !',
-            'Porte-clé esimerch, une manière élégante d’ajouter un peu de personnalité à vos clés. Un design minimaliste et raffiné. <br> Le logo sera gravé !',
-            'Porte-clé repère sphérique, un accessoire unique et moderne pour ne jamais perdre vos clés. Design futuriste avec une touche sophistiquée. <br> Le logo sera gravé !'
+            'Les porte-clefs sont fait localement ! <br> On a enfin retrouvé les portes ! Pour être sûr de ne plus jamais les perdre, attachez en une à vos clés ! <br> Le logo sera gravé !',
+            'Les porte-clefs sont fait localement ! <br> Que dire ... Ils sont tout simplement sobre, transportable, stylé, harmonieux, classe, élégant, compact, discret, moderne, raffiné, original, tendance, épuré, pratique, robuste, léger, innovant, fonctionnel, esthétique, intemporel, soigné, équilibré, chic, ergonomique  <br> Le logo sera gravé !',
+            'Les porte-clefs sont fait localement ! <br> Vous voulez impressioner votre prof de physique en connaissant par coeur votre repère sphérique le jour de l\'exam ? On a LA solution. <br> Le logo sera gravé !'
         ];
         
         
@@ -403,7 +403,7 @@ var Price = [
     '19€',
     '19€',
     '19€',
-    '15€',
+    '16€',
     '7€',
     '1€',
     '1€',
@@ -414,7 +414,7 @@ var Title = [
     'Polo gris sidéral',
     'Polo noir charbon',
     'Polo blanc neige',
-    'Gourde blanc éclatant',
+    'Gourde blanche (80cL, Isotherme)',
     'Tote-bag beige esisar',
     'Porte(clé) porte',
     'Porte(clé) esimerch',
@@ -442,4 +442,8 @@ function getUrlParameter(name) {
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+function redirect(){
+    window.open("https://forms.gle/zqKG2WfQHJoiLQTp8", "_blank");
 }

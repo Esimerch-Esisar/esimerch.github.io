@@ -40,10 +40,6 @@
 
 </head>
 <body class="animsition">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXQQ6M4B"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 	
 	<!-- Header -->
 	<header class="header-v2">
@@ -891,32 +887,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
 	</div>
 
 
-	<script>
-    function sendData(){
-    var request = new XMLHttpRequest();
-    var url = 'https://discord.com/api/webhooks/1221932777499263158/ThVWkczP3AK6wKPqbtAucU6m5AULUA-TD1RhwaqyUaJPmm3h7d7p_owAQbPPEHsYGlos';
-    request.open("POST", url);
-    request.setRequestHeader('Content-type', 'application/json');
 
-
-    const params = {
-        username: "Esimerch", 
-        embeds: [
-            {
-                title: "Esimerch !",
-                color: 993399, 
-                timestamp: new Date()
-            }
-        ]
-    };
-
-    request.send(JSON.stringify(params));
-}
-sendData();
-		function redirect(){
-			window.open("https://docs.google.com/forms/d/e/1FAIpQLSdYS0UKS6vmafm49iy6RmWinSu3Ppr_FEoEOwdg4uh7tWGTDg/viewform", "_blank");
-		}
-	</script>
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -944,6 +915,9 @@ sendData();
 	<script src="vendor/parallax100/parallax100.js"></script>
 	<script>
         $('.parallax100').parallax100();
+		function redirect(){
+			window.open("https://forms.gle/zqKG2WfQHJoiLQTp8", "_blank");
+		}
 	</script>
 <!--===============================================================================================-->
 	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
