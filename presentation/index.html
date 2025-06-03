@@ -10,9 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Visualization & Content Choices: 
-        - Report Info: Financial results (profits, units sold per semester/product). -> Goal: Compare performance, show product popularity. -> Viz/Method: KPI cards for headline stats, an interactive bar chart (Chart.js) to compare semesters, and two donut charts (Chart.js) for product breakdown. -> Interaction: Buttons to toggle the bar chart data (profits vs. units sold). Hover tooltips on all charts. -> Justification: Far more engaging and easier to digest than static tables. The interaction allows for user-driven data exploration.
-        - Report Info: Project stages (planning, product choice, comms, etc.). -> Goal: Explain the project lifecycle clearly. -> Viz/Method: A visual timeline using HTML/CSS with icons and short text blocks. -> Interaction: Static, but visual separation improves clarity. -> Justification: A visual flow is more intuitive and quicker to understand than a long paragraph.
-        - Report Info: Problems encountered and recommendations. -> Goal: Present challenges and solutions constructively. -> Viz/Method: A two-column layout using HTML/CSS to clearly separate challenges from future recommendations. -> Interaction: None. -> Justification: This clear visual separation highlights the project's reflective and forward-looking nature.
+        - Report Info: Financial results. -> Goal: Compare performance. -> Viz/Method: KPI cards, interactive bar chart (Chart.js), donut charts (Chart.js). -> Interaction: Toggle bar chart data, hover tooltips. -> Justification: Engaging data exploration.
+        - Report Info: Team organisation. -> Goal: Introduce the team. -> Viz/Method: Profile cards. -> Interaction: Static. -> Justification: Clear presentation.
+        - Report Info: Project objectives. -> Goal: State project aims. -> Viz/Method: Bulleted list within a styled section. -> Interaction: Static. -> Justification: Direct and clear.
+        - Report Info: Project stages (Organisation, Produits, Fournisseur, Communication, Ventes). -> Goal: Detail project lifecycle. -> Viz/Method: Sequential descriptive blocks, with a dedicated focus on Communication detailing channels and actions. -> Interaction: Static flow. -> Justification: Provides comprehensive insight into project execution.
+        - Report Info: Final results (products sold). -> Goal: Summarize achievements. -> Viz/Method: Descriptive text with key product mentions. -> Interaction: Static. -> Justification: Clear summary of outcomes.
+        - Report Info: Collaborations. -> Goal: Highlight external links. -> Viz/Method: Descriptive text. -> Interaction: Static. -> Justification: Shows project integration.
+        - Report Info: Problems & recommendations. -> Goal: Constructive analysis. -> Viz/Method: Two-column layout for challenges vs. improvements. -> Interaction: Static. -> Justification: Highlights reflective nature.
     -->
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -35,6 +39,19 @@
             background-size: 20px 20px;
             background-position: 0 0,10px 10px;
         }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 44px;
+            bottom: -10px;
+            width: 2px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+         .timeline-item:last-child::before {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -44,13 +61,16 @@
             <div class="flex items-center space-x-2">
                 <span class="text-xl font-bold text-violet-600">Esimerch</span>
             </div>
-            <div class="hidden md:flex items-center space-x-6">
+            <div class="hidden md:flex items-center space-x-4 lg:space-x-6 text-sm lg:text-base">
+                <a href="#organisation" class="text-slate-600 hover:text-violet-600 transition">Organisation</a>
+                <a href="#objectifs" class="text-slate-600 hover:text-violet-600 transition">Objectifs</a>
+                <a href="#etapes" class="text-slate-600 hover:text-violet-600 transition">Étapes du Projet</a>
                 <a href="#bilan" class="text-slate-600 hover:text-violet-600 transition">Bilan</a>
-                <a href="#strategie" class="text-slate-600 hover:text-violet-600 transition">Stratégie</a>
-                <a href="#lecons" class="text-slate-600 hover:text-violet-600 transition">Leçons Apprises</a>
-                <a href="#equipe" class="text-slate-600 hover:text-violet-600 transition">L'Équipe</a>
+                <a href="#resultat" class="text-slate-600 hover:text-violet-600 transition">Résultat Final</a>
+                <a href="#liens" class="text-slate-600 hover:text-violet-600 transition">Autres Projets</a>
+                <a href="#defis" class="text-slate-600 hover:text-violet-600 transition">Défis & Perspectives</a>
             </div>
-            <a href="https://www.esimerch.fr/" target="_blank" class="hidden md:block bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition">Visiter le Site</a>
+            <a href="https://www.esimerch.fr/" target="_blank" class="hidden md:block bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition text-sm">Visiter le Site</a>
             <div class="md:hidden">
                 <button id="menu-btn" class="text-slate-600 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -58,10 +78,13 @@
             </div>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#bilan" class="block py-2 text-slate-600 hover:text-violet-600 transition">Bilan</a>
-             <a href="#strategie" class="block py-2 text-slate-600 hover:text-violet-600 transition">Stratégie</a>
-             <a href="#lecons" class="block py-2 text-slate-600 hover:text-violet-600 transition">Leçons Apprises</a>
-             <a href="#equipe" class="block py-2 text-slate-600 hover:text-violet-600 transition">L'Équipe</a>
+             <a href="#organisation" class="block py-2 text-slate-600 hover:text-violet-600 transition">Organisation & Équipe</a>
+             <a href="#objectifs" class="block py-2 text-slate-600 hover:text-violet-600 transition">Objectifs</a>
+             <a href="#etapes" class="block py-2 text-slate-600 hover:text-violet-600 transition">Étapes du Projet</a>
+             <a href="#bilan" class="block py-2 text-slate-600 hover:text-violet-600 transition">Bilan Financier</a>
+             <a href="#resultat" class="block py-2 text-slate-600 hover:text-violet-600 transition">Résultat Final</a>
+             <a href="#liens" class="block py-2 text-slate-600 hover:text-violet-600 transition">Liens avec d'Autres Projets</a>
+             <a href="#defis" class="block py-2 text-slate-600 hover:text-violet-600 transition">Défis & Perspectives</a>
              <a href="https://www.esimerch.fr/" target="_blank" class="block mt-2 bg-violet-600 text-white text-center px-4 py-2 rounded-lg hover:bg-violet-700 transition">Visiter le Site</a>
         </div>
     </header>
@@ -75,29 +98,134 @@
             </div>
         </section>
 
+        <section id="organisation" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Organisation et Équipe</h2>
+                    <p class="mt-3 text-lg text-slate-600">Une collaboration efficace et une répartition claire des rôles pour mener à bien le projet.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center bg-white p-6 rounded-lg shadow">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">RB</div>
+                        <h4 class="mt-4 font-bold">Robbie BERLIOZ</h4>
+                        <p class="text-sm text-slate-500">Responsable Site Web & Design</p>
+                    </div>
+                    <div class="text-center bg-white p-6 rounded-lg shadow">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">HB</div>
+                        <h4 class="mt-4 font-bold">Hugo BRUCHON</h4>
+                        <p class="text-sm text-slate-500">Responsable Communication</p>
+                    </div>
+                    <div class="text-center bg-white p-6 rounded-lg shadow">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">NP</div>
+                        <h4 class="mt-4 font-bold">Nathan PANNETIER</h4>
+                        <p class="text-sm text-slate-500">Responsable Produits & Création Porte-clés</p>
+                    </div>
+                    <div class="text-center bg-white p-6 rounded-lg shadow">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">VV</div>
+                        <h4 class="mt-4 font-bold">Victor VOINET</h4>
+                        <p class="text-sm text-slate-500">Responsable Budget</p>
+                    </div>
+                </div>
+                <p class="mt-8 text-center text-slate-600 max-w-2xl mx-auto">L'équipe a adapté ses actions aux besoins rencontrés durant les deux semestres du projet, assurant une gestion flexible et réactive.</p>
+            </div>
+        </section>
+
+        <section id="objectifs" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Nos Objectifs Clés</h2>
+                    <p class="mt-3 text-lg text-slate-600">Les ambitions qui ont guidé chaque étape du projet Esimerch.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-lg p-8">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-violet-500 text-white flex items-center justify-center mr-3 font-semibold">1</span>
+                            <span class="text-slate-700"><strong class="font-medium text-slate-800">Restaurer la Confiance :</strong> Regagner la confiance des étudiants, professeurs et personnel de l'ESISAR envers Esimerch suite aux erreurs passées.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-violet-500 text-white flex items-center justify-center mr-3 font-semibold">2</span>
+                            <span class="text-slate-700"><strong class="font-medium text-slate-800">Qualité des Produits :</strong> Proposer des articles personnalisés de qualité, aux couleurs de l'école.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-violet-500 text-white flex items-center justify-center mr-3 font-semibold">3</span>
+                            <span class="text-slate-700"><strong class="font-medium text-slate-800">Collections Saisonnières :</strong> Répartir les produits en collections (Hiver, Été) pour répondre aux besoins actuels.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 rounded-full bg-violet-500 text-white flex items-center justify-center mr-3 font-semibold">4</span>
+                            <span class="text-slate-700"><strong class="font-medium text-slate-800">Performance Financière :</strong> Générer des bénéfices pour réduire le coût du SSE, avec un objectif initial de dépasser les 100€ de revenus du groupe précédent.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="etapes" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Les Étapes Clés du Projet</h2>
+                    <p class="mt-3 text-lg text-slate-600">De la conception à la commercialisation, un parcours structuré pour atteindre nos objectifs.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-12">
+                    <div class="relative pl-10 timeline-item">
+                        <div class="absolute left-0 top-0 flex items-center justify-center h-10 w-10 rounded-full bg-violet-500 text-white font-bold text-lg z-10">A</div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-2 pt-1">Organisation et Prise en Main</h3>
+                        <p class="text-slate-600">La première phase a consisté à comprendre les besoins, définir le but du projet et planifier son développement. Un rétro-planning a été établi, initialement avec trois périodes de vente, fusionnées par la suite en deux pour ne pas saturer les élèves.</p>
+                    </div>
+                    <div class="relative pl-10 timeline-item">
+                        <div class="absolute left-0 top-0 flex items-center justify-center h-10 w-10 rounded-full bg-violet-500 text-white font-bold text-lg z-10">B</div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-2 pt-1">Choix des Produits</h3>
+                        <p class="text-slate-600">Après consultation avec le Cercle des élèves, les produits ont été sélectionnés : bonnets, gants et cache-cous pour la période hivernale ; polos, gourdes, porte-clés et tote-bags pour l'été. Le choix des coloris et références a nécessité des contacts avec divers fournisseurs.</p>
+                    </div>
+                    <div class="relative pl-10 timeline-item">
+                        <div class="absolute left-0 top-0 flex items-center justify-center h-10 w-10 rounded-full bg-violet-500 text-white font-bold text-lg z-10">C</div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-2 pt-1">Sélection du Fournisseur</h3>
+                        <p class="text-slate-600">Plusieurs entreprises (Agence-Pattern, Festiprint, Goodetik) ont été sollicitées. Goodetik a été choisi pour ses prix avantageux, les échantillons gratuits et la proximité. Une visite à leur showroom a permis de finaliser les choix avec les conseils du directeur.</p>
+                    </div>
+                    <div class="relative pl-10 timeline-item bg-white p-6 rounded-lg shadow-lg border border-violet-200">
+                        <div class="absolute left-0 top-0 flex items-center justify-center h-10 w-10 rounded-full bg-violet-600 text-white font-bold text-lg z-10 shadow-md">D</div>
+                        <h3 class="text-2xl font-semibold text-violet-700 mb-3 pt-1">Communication : Un Pilier Fondamental</h3>
+                        <p class="text-slate-600 mb-4">Pour éviter de passer inaperçus, une stratégie de communication multi-canaux a été déployée :</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-center"><span class="text-violet-500 mr-2 text-xl">📢</span>Intervention auprès des promotions P28 et P29, accompagnée d'un sondage.</li>
+                            <li class="flex items-center"><span class="text-violet-500 mr-2 text-xl">📱</span>Diffusion sur les réseaux sociaux, par e-mails, sur l'intranet et via le bouche-à-oreille.</li>
+                            <li class="flex items-center"><span class="text-violet-500 mr-2 text-xl">🖼️</span>Création d'affiches marquantes avec des professeurs posant avec les produits, diffusées dans l'ESISAR et sur les écrans TV.</li>
+                            <li class="flex items-center"><span class="text-violet-500 mr-2 text-xl">🌐</span>Développement du site web <a href="https://www.esimerch.fr/" target="_blank" class="text-violet-600 hover:underline font-medium">esimerch.fr</a> pour la découverte des produits et les commandes.</li>
+                            <li class="flex items-center"><span class="text-violet-500 mr-2 text-xl">🔗</span>Création d'un QR code géant et d'autocollants redirigeant vers le site.</li>
+                        </ul>
+                    </div>
+                     <div class="relative pl-10 timeline-item">
+                        <div class="absolute left-0 top-0 flex items-center justify-center h-10 w-10 rounded-full bg-violet-500 text-white font-bold text-lg z-10">E</div>
+                        <h3 class="text-2xl font-semibold text-slate-800 mb-2 pt-1">Ventes et Logistique</h3>
+                        <p class="text-slate-600">Les ventes ont été organisées via un formulaire Google accessible depuis le site internet. Des permanences ont été mises en place pour répondre aux questions, présenter les échantillons et encaisser les paiements, facilitant l'accès aux produits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="bilan" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Le Bilan en Chiffres</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Le Bilan Financier en Chiffres</h2>
                     <p class="mt-3 text-lg text-slate-600">Une analyse interactive de nos performances financières et commerciales sur les deux semestres.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-center">
-                    <div class="bg-slate-100 p-6 rounded-lg">
+                    <div class="bg-slate-100 p-6 rounded-lg shadow">
                         <p class="text-sm font-medium text-slate-500">Bénéfice Total</p>
                         <p class="text-4xl font-bold text-violet-600 mt-2">411,81 €</p>
                     </div>
-                    <div class="bg-slate-100 p-6 rounded-lg">
+                    <div class="bg-slate-100 p-6 rounded-lg shadow">
                         <p class="text-sm font-medium text-slate-500">Heures Investies</p>
                         <p class="text-4xl font-bold text-violet-600 mt-2">50 h</p>
                     </div>
-                    <div class="bg-slate-100 p-6 rounded-lg">
+                    <div class="bg-slate-100 p-6 rounded-lg shadow">
                         <p class="text-sm font-medium text-slate-500">Rentabilité Horaire (Groupe)</p>
                         <p class="text-4xl font-bold text-violet-600 mt-2">8,24 €/h</p>
                     </div>
                 </div>
+                <p class="text-center text-slate-600 mb-10 max-w-2xl mx-auto">La seule dépense engagée a été l'achat du nom de domaine. Forts de l'expérience du S1, la stratégie marketing a été ajustée, augmentant les revenus de 30€ au S2.</p>
 
-                <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8 shadow-md">
                     <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Comparaison des Semestres</h3>
                      <div class="flex justify-center space-x-2 mb-6">
                         <button id="show-profits-btn" class="bg-violet-600 text-white px-4 py-2 text-sm rounded-md shadow-sm">Bénéfices</button>
@@ -109,109 +237,106 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8 shadow-md">
                         <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Ventes Collection Hiver (S1)</h3>
                         <div class="chart-container h-64 md:h-72">
                             <canvas id="semester1Chart"></canvas>
                         </div>
                     </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8 shadow-md">
                         <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Ventes Collection Été (S2)</h3>
                         <div class="chart-container h-64 md:h-72">
                             <canvas id="semester2Chart"></canvas>
                         </div>
                     </div>
                 </div>
+                 <p class="mt-12 text-center text-slate-600 max-w-3xl mx-auto">Ce projet, bien que rentable, est avant tout un exercice pédagogique précieux pour développer des compétences en gestion de projet, communication, marketing, logistique et prise de décision collective.</p>
             </div>
         </section>
 
-        <section id="strategie" class="py-16 md:py-24 bg-slate-100">
+        <section id="resultat" class="py-16 md:py-24 bg-slate-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Notre Stratégie Gagnante</h2>
-                    <p class="mt-3 text-lg text-slate-600">De l'idée à la vente, voici les étapes clés qui ont structuré notre projet et assuré son succès.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Résultat Final du Projet</h2>
+                    <p class="mt-3 text-lg text-slate-600">Les réalisations concrètes et les produits offerts lors des deux périodes de vente.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
-                    <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">1</div>
-                        <h3 class="font-bold mb-2">Planification</h3>
-                        <p class="text-slate-600 text-sm">Prise en main, définition des objectifs et création d'un rétro-planning pour anticiper chaque étape.</p>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow">
+                    <p class="text-slate-700 mb-4">Le projet Esimerch s'est concrétisé par deux périodes de vente distinctes, chacune avec sa propre collection de produits :</p>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Collection Hiver (Avant Noël) :</h4>
+                        <ul class="list-disc list-inside text-slate-600 space-y-1">
+                            <li>Gants</li>
+                            <li>Caches-cou</li>
+                            <li>Bonnets</li>
+                        </ul>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">2</div>
-                        <h3 class="font-bold mb-2">Choix des Produits</h3>
-                        <p class="text-slate-600 text-sm">Consultation du Cercle et sondages pour sélectionner des articles pertinents pour les collections Hiver et Été.</p>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-violet-700 mb-2">Collection Printemps/Été (Mai) :</h4>
+                        <ul class="list-disc list-inside text-slate-600 space-y-1">
+                            <li>Tote bags</li>
+                            <li>Polos</li>
+                            <li>Gourdes</li>
+                            <li>Porte-clés en bois (ajout par rapport au plan initial)</li>
+                        </ul>
                     </div>
-                    <div class="flex flex-col items-center">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">3</div>
-                        <h3 class="font-bold mb-2">Sélection Fournisseur</h3>
-                        <p class="text-slate-600 text-sm">Choix de "Goodetik" après comparaison de devis, pour ses prix, sa proximité et ses échantillons gratuits.</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">4</div>
-                        <h3 class="font-bold mb-2">Communication</h3>
-                        <p class="text-slate-600 text-sm">Campagne multi-canal : site web, affiches créatives avec les professeurs, réseaux sociaux et e-mails.</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">5</div>
-                        <h3 class="font-bold mb-2">Ventes & Logistique</h3>
-                        <p class="text-slate-600 text-sm">Utilisation d'un formulaire en ligne et tenue de permanences pour faciliter les commandes et les paiements.</p>
-                    </div>
+                    <p class="text-slate-700">Pour promouvoir ces ventes, un site internet a été réalisé, présentant les produits et un lien vers le formulaire de précommande. Des affiches, mettant en scène des professeurs avec les articles, ont également été créées et diffusées.</p>
+                    <p class="mt-4 text-slate-700">Globalement, le plan initial a été respecté. L'idée de proposer des casquettes et d'autres produits a été écartée après concertation avec le Cercle, afin d'éviter un chevauchement avec les produits Esiwear.</p>
                 </div>
             </div>
         </section>
 
-        <section id="lecons" class="py-16 md:py-24 bg-white">
+        <section id="liens" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Leçons Apprises & Perspectives</h2>
-                    <p class="mt-3 text-lg text-slate-600">Chaque défi a été une opportunité d'apprendre. Voici notre analyse et nos recommandations pour l'avenir.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Liens avec d'Autres Projets</h2>
+                    <p class="mt-3 text-lg text-slate-600">Des collaborations et des synergies créées au sein de l'écosystème étudiant.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-lg p-8">
+                    <p class="text-slate-700 mb-4">Bien que le projet Esimerch ait été relativement autonome, des liens ont été tissés avec d'autres initiatives étudiantes :</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-violet-500 mr-3 text-2xl">🤝</span>
+                            <div>
+                                <h4 class="font-medium text-slate-800">Partenariat avec le Groupe Outdoor :</h4>
+                                <p class="text-slate-600">Don des échantillons de gants (reçus du fournisseur Goodetik) au groupe Outdoor. Ce lot a pu être gagné lors du Séminaire de Ski Étudiant (SSE).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-400 mr-3 text-2xl">🔗</span>
+                            <div>
+                                <h4 class="font-medium text-slate-800">Collaboration envisagée (non réalisée) :</h4>
+                                <p class="text-slate-600">Il était prévu de faire de la publicité pour d'autres groupes, notamment le groupe Calendriers, sur le site esimerch.fr. Ce partenariat n'a pas eu lieu en raison de l'annulation de la production des calendriers.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="defis" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Défis Rencontrés et Perspectives d'Avenir</h2>
+                    <p class="mt-3 text-lg text-slate-600">Chaque obstacle a été une leçon, et chaque succès une motivation pour l'avenir.</p>
                 </div>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
+                    <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg shadow">
                         <h3 class="text-xl font-bold text-rose-800 mb-3">Défis Rencontrés</h3>
                         <ul class="space-y-3 text-rose-700">
-                            <li><strong class="font-medium">Communication Fournisseur:</strong> Délais de réponse longs (2-3 semaines) créant une incertitude sur le planning.</li>
-                            <li><strong class="font-medium">Gestion des Commandes:</strong> Difficulté à gérer les paiements et les commandes arrivant après la date de clôture.</li>
+                            <li><strong class="font-medium">Choix du Fournisseur :</strong> Changement rapide en début de projet pour opter pour Goodetik (Romans), plus avantageux et proche.</li>
+                            <li><strong class="font-medium">Communication Fournisseur :</strong> Délais de réponse longs de Goodetik (2-3 semaines), créant des craintes pour le planning. Heureusement, des semaines-tampons avaient été prévues.</li>
+                            <li><strong class="font-medium">Gestion des Commandes :</strong> Difficulté sous-évaluée concernant les paiements et les commandes tardives après clôture. Nécessité d'une communication plus claire sur ce point.</li>
                         </ul>
+                         <p class="mt-4 text-sm text-rose-600">Ces problèmes ont permis d'apprendre à être plus réactifs, mieux organisés et à trouver des solutions rapides.</p>
                     </div>
-                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                        <h3 class="text-xl font-bold text-green-800 mb-3">Pistes d'Amélioration</h3>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg shadow">
+                        <h3 class="text-xl font-bold text-green-800 mb-3">Perspectives et Pistes d'Amélioration</h3>
+                         <p class="text-green-700 mb-3">Après une première année difficile pour Esimerch (2023-2024), l'équipe 2024-2025 a appris des erreurs passées (communication efficace, sondages) et a quadruplé les bénéfices.</p>
                         <ul class="space-y-3 text-green-700">
-                            <li><strong class="font-medium">Fluidifier la Communication:</strong> Envisager un autre fournisseur ou un contact alternatif pour plus de réactivité.</li>
-                            <li><strong class="font-medium">Constituer un Stock Initial:</strong> Avoir un petit stock pour répondre à la demande immédiate et gérer les commandes tardives plus facilement.</li>
+                            <li><strong class="font-medium">Communication Fournisseur :</strong> Envisager un changement de fournisseur ou un contact alternatif chez Goodetik pour une communication plus fluide.</li>
+                            <li><strong class="font-medium">Stock Initial :</strong> Constituer un petit stock de produits pour répondre à la demande immédiate, éviter les délais de production et faciliter la gestion des commandes tardives.</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="equipe" class="py-16 md:py-24 bg-slate-100">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">L'Équipe Esimerch</h2>
-                    <p class="mt-3 text-lg text-slate-600">Une collaboration efficace au service d'un projet commun.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">RB</div>
-                        <h4 class="mt-4 font-bold">Robbie BERLIOZ</h4>
-                        <p class="text-sm text-slate-500">Site Web & Design</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">HB</div>
-                        <h4 class="mt-4 font-bold">Hugo BRUCHON</h4>
-                        <p class="text-sm text-slate-500">Communication & Marketing</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">NP</div>
-                        <h4 class="mt-4 font-bold">Nathan PANNETIER</h4>
-                        <p class="text-sm text-slate-500">Produits & Porte-clés</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">VV</div>
-                        <h4 class="mt-4 font-bold">Victor VOINET</h4>
-                        <p class="text-sm text-slate-500">Budget & Finances</p>
+                        <p class="mt-4 text-sm text-green-600">Il est souhaitable que le groupe Esimerch continue sa progression les années à venir.</p>
                     </div>
                 </div>
             </div>
@@ -233,9 +358,11 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
+            document.querySelectorAll('#mobile-menu a, header nav a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.getAttribute('href').startsWith('#')) {
+                         mobileMenu.classList.add('hidden');
+                    }
                 });
             });
 
@@ -247,7 +374,7 @@
                 },
                 units: {
                     labels: ['Semestre 1 (Hiver)', 'Semestre 2 (Été)'],
-                    values: [45, 107],
+                    values: [ (26+7+12) , (23+22+15+47) ],
                     label: 'Unités Vendues'
                 },
                 s1_products: {
@@ -266,15 +393,22 @@
                 slate: 'rgba(100, 116, 139, 0.6)',
                 slateBorder: 'rgba(100, 116, 139, 1)',
                 donutPalette: [
-                    'rgba(139, 92, 246, 0.8)',
-                    'rgba(99, 102, 241, 0.8)',
-                    'rgba(239, 68, 68, 0.8)',
-                    'rgba(249, 115, 22, 0.8)',
-                    'rgba(245, 158, 11, 0.8)'
+                    'rgba(139, 92, 246, 0.8)', // violet-500
+                    'rgba(99, 102, 241, 0.8)',  // indigo-500
+                    'rgba(59, 130, 246, 0.8)', // blue-500
+                    'rgba(16, 185, 129, 0.8)', // emerald-500
+                    'rgba(234, 179, 8, 0.8)'   // yellow-500
+                ],
+                 donutBorders: [
+                    'rgba(139, 92, 246, 1)',
+                    'rgba(99, 102, 241, 1)',
+                    'rgba(59, 130, 246, 1)',
+                    'rgba(16, 185, 129, 1)',
+                    'rgba(234, 179, 8, 1)'
                 ]
             };
 
-            const chartOptions = {
+            const commonChartOptions = {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
@@ -283,13 +417,38 @@
                         labels: {
                             font: { size: 12 },
                             color: '#475569',
-                            boxWidth: 20
+                            boxWidth: 15,
+                            padding: 20
                         }
                     },
                     tooltip: {
                         backgroundColor: '#1e293b',
-                        titleFont: { weight: 'bold' },
-                        bodyFont: { size: 14 },
+                        titleFont: { weight: 'bold', size: 14 },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 4,
+                        boxPadding: 3
+                    }
+                }
+            };
+            
+            const barChartOptions = {
+                ...commonChartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#64748b', font: {size: 10} },
+                        grid: { color: '#e2e8f0' }
+                    },
+                    x: {
+                        ticks: { color: '#64748b', font: {size: 10} },
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    tooltip: {
+                         ...commonChartOptions.plugins.tooltip,
                         callbacks: {
                             label: function(context) {
                                 let label = context.dataset.label || '';
@@ -297,43 +456,25 @@
                                     label += ': ';
                                 }
                                 if (context.parsed.y !== null) {
-                                    label += new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
+                                     if (semestersChart.data.datasets[0].label.includes('€')) {
+                                        label += new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
+                                    } else {
+                                        label += context.parsed.y + ' unités';
+                                    }
                                 }
                                 return label;
                             }
                         }
                     }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: { color: '#64748b' },
-                        grid: { color: '#e2e8f0' }
-                    },
-                    x: {
-                        ticks: { color: '#64748b' },
-                        grid: { display: false }
-                    }
                 }
             };
             
             const donutChartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: '#475569',
-                            font: { size: 12 },
-                            boxWidth: 20,
-                             padding: 20
-                        }
-                    },
+                ...commonChartOptions,
+                 plugins: {
+                    ...commonChartOptions.plugins,
                     tooltip: {
-                        backgroundColor: '#1e293b',
-                        titleFont: { weight: 'bold' },
-                        bodyFont: { size: 14 },
+                        ...commonChartOptions.plugins.tooltip,
                         callbacks: {
                             label: function(context) {
                                 let label = context.label || '';
@@ -358,10 +499,11 @@
                         data: data.profits.values,
                         backgroundColor: [chartColors.slate, chartColors.purple],
                         borderColor: [chartColors.slateBorder, chartColors.purpleBorder],
-                        borderWidth: 1
+                        borderWidth: 1,
+                        borderRadius: 4
                     }]
                 },
-                options: chartOptions
+                options: barChartOptions
             });
 
             const s1Ctx = document.getElementById('semester1Chart').getContext('2d');
@@ -370,10 +512,12 @@
                 data: {
                     labels: data.s1_products.labels,
                     datasets: [{
-                        label: 'Unités vendues',
+                        label: 'Unités vendues S1',
                         data: data.s1_products.values,
-                        backgroundColor: chartColors.donutPalette,
-                        hoverOffset: 4
+                        backgroundColor: chartColors.donutPalette.slice(0, data.s1_products.labels.length),
+                        borderColor: chartColors.donutBorders.slice(0, data.s1_products.labels.length),
+                        borderWidth: 1,
+                        hoverOffset: 8
                     }]
                 },
                 options: donutChartOptions
@@ -385,10 +529,12 @@
                 data: {
                     labels: data.s2_products.labels,
                     datasets: [{
-                        label: 'Unités vendues',
+                        label: 'Unités vendues S2',
                         data: data.s2_products.values,
-                        backgroundColor: chartColors.donutPalette,
-                        hoverOffset: 4
+                        backgroundColor: chartColors.donutPalette.slice(0, data.s2_products.labels.length),
+                        borderColor: chartColors.donutBorders.slice(0, data.s2_products.labels.length),
+                        borderWidth: 1,
+                        hoverOffset: 8
                     }]
                 },
                 options: donutChartOptions
@@ -403,26 +549,14 @@
                 semestersChart.data.datasets[0].label = newData.label;
 
                 if(dataType === 'profits') {
-                   semestersChart.options.plugins.tooltip.callbacks.label = function(context) {
-                        let label = context.dataset.label || '';
-                        if (label) { label += ': '; }
-                        label += new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
-                        return label;
-                    };
                     showProfitsBtn.classList.add('bg-violet-600', 'text-white');
-                    showProfitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300');
-                    showUnitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showProfitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-100');
+                    showUnitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-100');
                     showUnitsBtn.classList.remove('bg-violet-600', 'text-white');
                 } else {
-                    semestersChart.options.plugins.tooltip.callbacks.label = function(context) {
-                        let label = context.dataset.label || '';
-                        if (label) { label += ': '; }
-                        label += context.parsed.y + ' unités';
-                        return label;
-                    };
                     showUnitsBtn.classList.add('bg-violet-600', 'text-white');
-                    showUnitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300');
-                    showProfitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showUnitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-100');
+                    showProfitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-100');
                     showProfitsBtn.classList.remove('bg-violet-600', 'text-white');
                 }
                 semestersChart.update();
@@ -434,4 +568,3 @@
     </script>
 </body>
 </html>
-
