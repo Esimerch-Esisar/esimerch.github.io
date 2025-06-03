@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Esimerch 2025 - Rapport Interactif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Visualization & Content Choices: 
+        - Report Info: Financial results (profits, units sold per semester/product). -> Goal: Compare performance, show product popularity. -> Viz/Method: KPI cards for headline stats, an interactive bar chart (Chart.js) to compare semesters, and two donut charts (Chart.js) for product breakdown. -> Interaction: Buttons to toggle the bar chart data (profits vs. units sold). Hover tooltips on all charts. -> Justification: Far more engaging and easier to digest than static tables. The interaction allows for user-driven data exploration.
+        - Report Info: Project stages (planning, product choice, comms, etc.). -> Goal: Explain the project lifecycle clearly. -> Viz/Method: A visual timeline using HTML/CSS with icons and short text blocks. -> Interaction: Static, but visual separation improves clarity. -> Justification: A visual flow is more intuitive and quicker to understand than a long paragraph.
+        - Report Info: Problems encountered and recommendations. -> Goal: Present challenges and solutions constructively. -> Viz/Method: A two-column layout using HTML/CSS to clearly separate challenges from future recommendations. -> Interaction: None. -> Justification: This clear visual separation highlights the project's reflective and forward-looking nature.
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+        .bg-pattern {
+            background-color: #f8fafc;
+            opacity: 0.8;
+            background-image:  radial-gradient(#a78bfa 0.5px, transparent 0.5px), radial-gradient(#a78bfa 0.5px, #f8fafc 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-bold text-violet-600">Esimerch</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#bilan" class="text-slate-600 hover:text-violet-600 transition">Bilan</a>
+                <a href="#strategie" class="text-slate-600 hover:text-violet-600 transition">Stratégie</a>
+                <a href="#lecons" class="text-slate-600 hover:text-violet-600 transition">Leçons Apprises</a>
+                <a href="#equipe" class="text-slate-600 hover:text-violet-600 transition">L'Équipe</a>
+            </div>
+            <a href="https://www.esimerch.fr/" target="_blank" class="hidden md:block bg-violet-600 text-white px-4 py-2 rounded-lg hover:bg-violet-700 transition">Visiter le Site</a>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-slate-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#bilan" class="block py-2 text-slate-600 hover:text-violet-600 transition">Bilan</a>
+             <a href="#strategie" class="block py-2 text-slate-600 hover:text-violet-600 transition">Stratégie</a>
+             <a href="#lecons" class="block py-2 text-slate-600 hover:text-violet-600 transition">Leçons Apprises</a>
+             <a href="#equipe" class="block py-2 text-slate-600 hover:text-violet-600 transition">L'Équipe</a>
+             <a href="https://www.esimerch.fr/" target="_blank" class="block mt-2 bg-violet-600 text-white text-center px-4 py-2 rounded-lg hover:bg-violet-700 transition">Visiter le Site</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative py-20 md:py-32 bg-white">
+            <div class="absolute inset-0 bg-pattern z-0"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">Projet Esimerch 2025</h1>
+                <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Redynamiser l'image de l'école et restaurer la confiance à travers des produits de qualité, une communication transparente et une gestion de projet rigoureuse.</p>
+            </div>
+        </section>
+
+        <section id="bilan" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Le Bilan en Chiffres</h2>
+                    <p class="mt-3 text-lg text-slate-600">Une analyse interactive de nos performances financières et commerciales sur les deux semestres.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-center">
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-sm font-medium text-slate-500">Bénéfice Total</p>
+                        <p class="text-4xl font-bold text-violet-600 mt-2">411,81 €</p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-sm font-medium text-slate-500">Heures Investies</p>
+                        <p class="text-4xl font-bold text-violet-600 mt-2">50 h</p>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg">
+                        <p class="text-sm font-medium text-slate-500">Rentabilité Horaire (Groupe)</p>
+                        <p class="text-4xl font-bold text-violet-600 mt-2">8,24 €/h</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Comparaison des Semestres</h3>
+                     <div class="flex justify-center space-x-2 mb-6">
+                        <button id="show-profits-btn" class="bg-violet-600 text-white px-4 py-2 text-sm rounded-md shadow-sm">Bénéfices</button>
+                        <button id="show-units-btn" class="bg-white text-slate-700 border border-slate-300 px-4 py-2 text-sm rounded-md hover:bg-slate-100">Unités Vendues</button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="semestersChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Ventes Collection Hiver (S1)</h3>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="semester1Chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-center text-slate-800 mb-4">Ventes Collection Été (S2)</h3>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="semester2Chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategie" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Notre Stratégie Gagnante</h2>
+                    <p class="mt-3 text-lg text-slate-600">De l'idée à la vente, voici les étapes clés qui ont structuré notre projet et assuré son succès.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">1</div>
+                        <h3 class="font-bold mb-2">Planification</h3>
+                        <p class="text-slate-600 text-sm">Prise en main, définition des objectifs et création d'un rétro-planning pour anticiper chaque étape.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">2</div>
+                        <h3 class="font-bold mb-2">Choix des Produits</h3>
+                        <p class="text-slate-600 text-sm">Consultation du Cercle et sondages pour sélectionner des articles pertinents pour les collections Hiver et Été.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">3</div>
+                        <h3 class="font-bold mb-2">Sélection Fournisseur</h3>
+                        <p class="text-slate-600 text-sm">Choix de "Goodetik" après comparaison de devis, pour ses prix, sa proximité et ses échantillons gratuits.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">4</div>
+                        <h3 class="font-bold mb-2">Communication</h3>
+                        <p class="text-slate-600 text-sm">Campagne multi-canal : site web, affiches créatives avec les professeurs, réseaux sociaux et e-mails.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-violet-200 text-violet-700 mb-4 text-2xl">5</div>
+                        <h3 class="font-bold mb-2">Ventes & Logistique</h3>
+                        <p class="text-slate-600 text-sm">Utilisation d'un formulaire en ligne et tenue de permanences pour faciliter les commandes et les paiements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lecons" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Leçons Apprises & Perspectives</h2>
+                    <p class="mt-3 text-lg text-slate-600">Chaque défi a été une opportunité d'apprendre. Voici notre analyse et nos recommandations pour l'avenir.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-bold text-rose-800 mb-3">Défis Rencontrés</h3>
+                        <ul class="space-y-3 text-rose-700">
+                            <li><strong class="font-medium">Communication Fournisseur:</strong> Délais de réponse longs (2-3 semaines) créant une incertitude sur le planning.</li>
+                            <li><strong class="font-medium">Gestion des Commandes:</strong> Difficulté à gérer les paiements et les commandes arrivant après la date de clôture.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-bold text-green-800 mb-3">Pistes d'Amélioration</h3>
+                        <ul class="space-y-3 text-green-700">
+                            <li><strong class="font-medium">Fluidifier la Communication:</strong> Envisager un autre fournisseur ou un contact alternatif pour plus de réactivité.</li>
+                            <li><strong class="font-medium">Constituer un Stock Initial:</strong> Avoir un petit stock pour répondre à la demande immédiate et gérer les commandes tardives plus facilement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipe" class="py-16 md:py-24 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">L'Équipe Esimerch</h2>
+                    <p class="mt-3 text-lg text-slate-600">Une collaboration efficace au service d'un projet commun.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">RB</div>
+                        <h4 class="mt-4 font-bold">Robbie BERLIOZ</h4>
+                        <p class="text-sm text-slate-500">Site Web & Design</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">HB</div>
+                        <h4 class="mt-4 font-bold">Hugo BRUCHON</h4>
+                        <p class="text-sm text-slate-500">Communication & Marketing</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">NP</div>
+                        <h4 class="mt-4 font-bold">Nathan PANNETIER</h4>
+                        <p class="text-sm text-slate-500">Produits & Porte-clés</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto h-24 w-24 rounded-full bg-violet-200 flex items-center justify-center text-3xl font-bold text-violet-700">VV</div>
+                        <h4 class="mt-4 font-bold">Victor VOINET</h4>
+                        <p class="text-sm text-slate-500">Budget & Finances</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Groupe Esimerch. Rapport interactif créé pour le projet PX222.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            const data = {
+                profits: {
+                    labels: ['Semestre 1 (Hiver)', 'Semestre 2 (Été)'],
+                    values: [189.81, 222.00],
+                    label: 'Bénéfices (€)'
+                },
+                units: {
+                    labels: ['Semestre 1 (Hiver)', 'Semestre 2 (Été)'],
+                    values: [45, 107],
+                    label: 'Unités Vendues'
+                },
+                s1_products: {
+                    labels: ['Bonnets', 'Gants', 'Cache-cou'],
+                    values: [26, 7, 12]
+                },
+                s2_products: {
+                    labels: ['Gourdes', 'Tote Bags', 'Polos', 'Porte-clés'],
+                    values: [23, 22, 15, 47]
+                }
+            };
+            
+            const chartColors = {
+                purple: 'rgba(124, 58, 237, 0.6)',
+                purpleBorder: 'rgba(124, 58, 237, 1)',
+                slate: 'rgba(100, 116, 139, 0.6)',
+                slateBorder: 'rgba(100, 116, 139, 1)',
+                donutPalette: [
+                    'rgba(139, 92, 246, 0.8)',
+                    'rgba(99, 102, 241, 0.8)',
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(249, 115, 22, 0.8)',
+                    'rgba(245, 158, 11, 0.8)'
+                ]
+            };
+
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12 },
+                            color: '#475569',
+                            boxWidth: 20
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleFont: { weight: 'bold' },
+                        bodyFont: { size: 14 },
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#64748b' },
+                        grid: { color: '#e2e8f0' }
+                    },
+                    x: {
+                        ticks: { color: '#64748b' },
+                        grid: { display: false }
+                    }
+                }
+            };
+            
+            const donutChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#475569',
+                            font: { size: 12 },
+                            boxWidth: 20,
+                             padding: 20
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleFont: { weight: 'bold' },
+                        bodyFont: { size: 14 },
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.raw + ' unités';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const semestersCtx = document.getElementById('semestersChart').getContext('2d');
+            let semestersChart = new Chart(semestersCtx, {
+                type: 'bar',
+                data: {
+                    labels: data.profits.labels,
+                    datasets: [{
+                        label: data.profits.label,
+                        data: data.profits.values,
+                        backgroundColor: [chartColors.slate, chartColors.purple],
+                        borderColor: [chartColors.slateBorder, chartColors.purpleBorder],
+                        borderWidth: 1
+                    }]
+                },
+                options: chartOptions
+            });
+
+            const s1Ctx = document.getElementById('semester1Chart').getContext('2d');
+            new Chart(s1Ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.s1_products.labels,
+                    datasets: [{
+                        label: 'Unités vendues',
+                        data: data.s1_products.values,
+                        backgroundColor: chartColors.donutPalette,
+                        hoverOffset: 4
+                    }]
+                },
+                options: donutChartOptions
+            });
+
+            const s2Ctx = document.getElementById('semester2Chart').getContext('2d');
+            new Chart(s2Ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.s2_products.labels,
+                    datasets: [{
+                        label: 'Unités vendues',
+                        data: data.s2_products.values,
+                        backgroundColor: chartColors.donutPalette,
+                        hoverOffset: 4
+                    }]
+                },
+                options: donutChartOptions
+            });
+            
+            const showProfitsBtn = document.getElementById('show-profits-btn');
+            const showUnitsBtn = document.getElementById('show-units-btn');
+
+            function updateChart(dataType) {
+                const newData = data[dataType];
+                semestersChart.data.datasets[0].data = newData.values;
+                semestersChart.data.datasets[0].label = newData.label;
+
+                if(dataType === 'profits') {
+                   semestersChart.options.plugins.tooltip.callbacks.label = function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) { label += ': '; }
+                        label += new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(context.parsed.y);
+                        return label;
+                    };
+                    showProfitsBtn.classList.add('bg-violet-600', 'text-white');
+                    showProfitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showUnitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showUnitsBtn.classList.remove('bg-violet-600', 'text-white');
+                } else {
+                    semestersChart.options.plugins.tooltip.callbacks.label = function(context) {
+                        let label = context.dataset.label || '';
+                        if (label) { label += ': '; }
+                        label += context.parsed.y + ' unités';
+                        return label;
+                    };
+                    showUnitsBtn.classList.add('bg-violet-600', 'text-white');
+                    showUnitsBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showProfitsBtn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300');
+                    showProfitsBtn.classList.remove('bg-violet-600', 'text-white');
+                }
+                semestersChart.update();
+            }
+
+            showProfitsBtn.addEventListener('click', () => updateChart('profits'));
+            showUnitsBtn.addEventListener('click', () => updateChart('units'));
+        });
+    </script>
+</body>
+</html>
 
