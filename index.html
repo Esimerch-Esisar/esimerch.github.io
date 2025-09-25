@@ -1,995 +1,132 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<title>Esimerch</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+<html>
+  <head>
+    <title> Esimerch </title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #8a2be2, #4b0082);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
 
-<!--==============================================================================================-->
+  img {
+    width: 150px;
+    height: auto;
+  }
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  #countdown {
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  }
+  .purple {
+    color: #8a2be2;
+  }
+  a {
+  text-decoration: none;
+  }
+  @media (max-width: 950px) {
+  .container {
+    padding: 80px;
+    width: 90%; 
+    height: auto; 
+  }
+}
 
+</style>
 </head>
-<body class="animsition">
-	
-	<!-- Header -->
-	<header class="header-v2">
-		<!-- Header desktop -->
-		<div class="container-menu-desktop trans-03">
-			<div class="wrap-menu-desktop">
-				<nav class="limiter-menu-desktop p-l-45">
-					
-					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
-					</a>
-
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="index.html">Accueil</a>
-							</li>
-
-							<li>
-								<a href="product.html">Acheter</a>
-							</li>
-
-							<li>
-								<a href="blog.html">Avis clients</a>
-							</li>
-
-							<li>
-								<a href="about.html">À propos</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
-							</li>
-						</ul>
-					</div>	
-
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m h-full">
-						<div class="flex-c-m h-full p-lr-19">
-							<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-sidebar">
-								<i class="zmdi zmdi-menu"></i>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</div>	
-		</div>
-
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
-			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
-			</div>
-
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</div>
-		</div>
-
-
-		<!-- Menu Mobile -->
-		<div class="menu-mobile">
-			<ul class="topbar-mobile">
-				<li>
-					<div class="left-top-bar" style="display: flex;justify-content:space-between;align-items: center;">
-						Esimerch.fr <a href="faq.html" style="color:#B2B2B2;justify-content:right;" clbass="flex-c-m p-lr-10 trans-04"> Aide & FAQs </a>
-					</div>
-				</li>
-			</ul>
-			<ul class="main-menu-m">
-				<li>
-					<a href="index.html">Accueil</a>
-				</li>
-
-				<li>
-					<a href="product.html">Acheter</a>
-				</li>
-
-				<li>
-					<a href="blog.html">Avis clients</a>
-				</li>
-
-				<li>
-					<a href="about.html">À propos</a>
-				</li>
-
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
-		</div>
-
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-	</header>
-
-	<!-- Sidebar -->
-	<aside class="wrap-sidebar js-sidebar">
-		<div class="s-full js-hide-sidebar"></div>
-
-		<div class="sidebar flex-col-l p-t-22 p-b-25">
-			<div class="flex-r w-full p-b-30 p-r-27">
-				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-sidebar">
-					<i class="zmdi zmdi-close"></i>
-				</div>
-			</div>
-
-			<div class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
-				<ul class="sidebar-link w-full">
-					<li class="p-b-13">
-						<a href="index.html" class="stext-102 cl2 hov-cl1 trans-04">
-							Accueil
-						</a>
-					</li>
-					<li class="p-b-13">
-						<a href="product.html" class="stext-102 cl2 hov-cl1 trans-04">
-							Produits
-						</a>
-					</li>
-
-				</ul>
-
-				<div class="sidebar-gallery w-full p-tb-30">
-					<a href="https://www.instagram.com/esimerch" target="_blank" class="mtext-101 cl5">
-						@ Esimerch
-					</a>
-
-					<div class="flex-w flex-sb p-t-36 gallery-lb">
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-01.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-01.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-02.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-02.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-03.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-03.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-04.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-04.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-05.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-05.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-06.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-06.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-07.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-07.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-08.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-08.jpg');"></a>
-						</div>
-
-						<!-- item gallery sidebar -->
-						<div class="wrap-item-gallery m-b-10">
-							<a class="item-gallery bg-img1" href="images/gallery-09.jpg" data-lightbox="gallery" 
-							style="background-image: url('images/gallery-09.jpg');"></a>
-						</div>
-					</div>
-				</div>
-
-				<div class="sidebar-gallery w-full">
-					<span class="mtext-101 cl5">
-						A propos
-					</span>
-
-					<p class="stext-108 cl6 p-t-27">
-						Nous sommes le groupe Esimerch, notre but : être stylé et fun tout en générant de la thune pour le SSE. 
-					</p>
-				</div>
-			</div>
-		</div>
-	</aside>
-
-
-	
-
-
-	<!-- Slider -->
-	<section class="section-slide">
-		<div class="wrap-slick1 rs1-slick1">
-			<div class="slick1">
-				<div class="item-slick1" style="background-image: url(images/slide-03.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-202 cl0 respon2">
-									Nouvelle collection printemps-été 2025
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-104 cl0 p-t-19 p-b-43 respon1">
-									Gourdes 
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Voir les produits
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(images/slide-02.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30">
-							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-								<span class="ltext-202 cl0 respon2">
-									Nouvelle collection printemps-été 2025
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-								<h2 class="ltext-104 cl0 p-t-19 p-b-43 respon1">
-									Polos
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Voir les produits
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(images/slide-04.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30">
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-								<span class="ltext-202 cl0 respon2">
-									Nouvelle collection printemps-été 2025
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-104 cl0 p-t-19 p-b-43 respon1">
-									Tote-bags
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Voir les produits
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Banner -->
-	<div class="sec-banner bg0">
-		<div class="flex-w flex-c-m">
-			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
-				<div class="block1 wrap-pic-w">
-					<img src="images/banner-04.jpg" alt="IMG-BANNER">
-
-					<a href="product.html?filter=gourdes" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-						<div class="block1-txt-child1 flex-col-l">
-							<span class="block1-name cl0 ltext-102 trans-04 p-b-8">
-								Gourdes
-							</span>
-
-							<span class="block1-info cl0 stext-102 trans-04">
-								Printemps-été 2025
-							</span>
-						</div>
-
-						<div class="block1-txt-child2 p-b-4 trans-05">
-							<div class="block1-link stext-101 cl0 trans-09">
-								Plus d'infos
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
-				<div class="block1 wrap-pic-w">
-					<img src="images/banner-05.jpg" alt="IMG-BANNER">
-
-					<a href="product.html?filter=polos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-						<div class="block1-txt-child1 flex-col-l">
-							<span class="block1-name cl0 ltext-102 trans-04 p-b-8">
-								Polos
-							</span>
-
-							<span class="block1-info cl0 stext-102 trans-04">
-								Printemps-été 2025
-							</span>
-						</div>
-
-						<div class="block1-txt-child2 p-b-4 trans-05">
-							<div class="block1-link stext-101 cl0 trans-09">
-								Plus d'infos
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
-				<div class="block1 wrap-pic-w">
-					<img src="images/banner-06.jpg" alt="IMG-BANNER">
-
-					<a href="product.html?filter=totebags" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-						<div class="block1-txt-child1 flex-col-l">
-							<span class="block1-name cl0 ltext-102 trans-04 p-b-8">
-								Totes-bags
-							</span>
-
-							<span class="block1-info cl0 stext-102 trans-04">
-								Printemps-été 2025
-							</span>
-						</div>
-
-						<div class="block1-txt-child2 p-b-4 trans-05">
-							<div class="block1-link stext-101 cl0 trans-09">
-								Plus d'infos
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="size-202 m-lr-auto respon4">
-				<!-- Block1 -->
-				<div class="block1 wrap-pic-w">
-					<img src="images/banner-07.jpg" alt="IMG-BANNER">
-
-					<a href="product.html?filter=portes" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-						<div class="block1-txt-child1 flex-col-l">
-							<span class="block1-name cl0 ltext-102 trans-04 p-b-8">
-								Porte-clefs
-							</span>
-
-							<span class="block1-info cl0 stext-102 trans-04">
-								Printemps-été 2025
-							</span>
-						</div>
-
-						<div class="block1-txt-child2 p-b-4 trans-05">
-							<div class="block1-link stext-101 cl0 trans-09">
-								Plus d'infos
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<br>
-	<div style="display: flex; justify-content: center; align-items: center; max-width: 100%;">
-		<a onclick="redirect()" style="min-width:250px;" href="index.html" class="flex-c-m mtext-101 cl0 size-202 size-304 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-			Passer commande
-		</a>
- 	</div>
-<br><br>
-
-<div class="schedule-section container bg0 p-t-30 p-b-30 d-flex flex-column align-items-center">
-    <h3 class="mtext-105 cl5 txt-center p-b-20">
-
- <b>Créneaux de Test et Paiement </b > </h3>
-    <p class="stext-108 cl6 txt-center p-b-20">
-        Venez découvrir et tester les produits, et procéder au paiement en A042 lors des créneaux suivants :
-    </p>
-		<ul class="schedule-list stext-108 cl5">
-		    <li> <strong>Lundi 7 avril : de 12h15 à 13h</strong></li>
-		    <li>Mercredi 9 avril : de 12h15 à 13h</li>
-		    <li>Vendredi 11 avril : de 12h15 à 13h</li>
-		    <li>Lundi 14 avril : de 12h15 à 13h</li>
-		    <li>Mardi 22 avril : de 12h15 à 13h</li>
-		    <li>Vendredi 25 avril : de 12h15 à 13h</li>
-		</ul>
-</div>
-
-	<!-- Blog -->
-	<section class="sec-blog bg0 p-t-60 p-b-90">
-		<div class="container">
-			<div class="p-b-66">
-				<h3 class="ltext-105 cl5 txt-center respon1">
-					Avis clients
-				</h3>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog.html#blog-1">
-								<img  src="images/blog-01.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
-
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										Par
-									</span>
-
-									<span class="cl5">
-										JeanMichelAlonzoPierroAlberto
-									</span>
-								</span>
-
-								<span>
-									<span class="cl4">
-										le
-									</span>
-
-									<span class="cl5">
-										3 novembre 2024 
-									</span>
-								</span>
-							</div>
-
-							<h4 class="p-b-12">
-								<a class="mtext-101 cl2 hov-cl1 trans-04">
-									Je ne m'attendais pas à ça !
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								Ah, les produits Esimerch ! Je dois admettre que je ne m’attendais pas à ça.. Pourtant, ce cache-cou, ce bonnet et cette paire de gants, WOW !
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog.html#blog-2">
-								<img src="images/blog-02.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
-
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										Par
-									</span>
-
-									<span class="cl5">
-										Admin
-									</span>
-								</span>
-
-								<span>
-									<span class="cl4">
-										le
-									</span>
-
-									<span class="cl5">
-										18 janvier 2025
-									</span>
-								</span>
-							</div>
-
-							<h4 class="p-b-12">
-								<a class="mtext-101 cl2 hov-cl1 trans-04">
-									J'ai une jolie veste n'est-ce pas ? 
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								Je n'aurai jamais du avoir ce look si viril, cependant, après avoir porté un bonnet esimerch, je me suis retrouvé avec ce style !
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 p-b-40">
-					<div class="blog-item">
-						<div class="hov-img0">
-							<a href="blog.html#blog-3">
-								<img src="images/blog-03.jpg" alt="IMG-BLOG">
-							</a>
-						</div>
-
-						<div class="p-t-15">
-							<div class="stext-107 flex-w p-b-14">
-								<span class="m-r-3">
-									<span class="cl4">
-										Par
-									</span>
-
-									<span class="cl5">
-										Sarah J
-									</span>
-								</span>
-
-								<span>
-									<span class="cl4">
-										le
-									</span>
-
-									<span class="cl5">
-										3 novembre 2024 
-									</span>
-								</span>
-							</div>
-
-							<h4 class="p-b-12">
-								<a class="mtext-101 cl2 hov-cl1 trans-04">
-									Restaurant au top, j'ai adoré manger du poulpe
-								</a>
-							</h4>
-
-							<p class="stext-108 cl6">
-								J'ai adoré cet endroit ! L'atmosphère était chaleureuse et accueillante, parfaite pour un dîner en tête-à-tête.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Catégories
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="product.html?filter=gourdes" class="stext-107 cl7 hov-cl1 trans-04">
-								Gourdes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="product.html?filter=polos" class="stext-107 cl7 hov-cl1 trans-04">
-								Polos
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="product.html?filter=totebags" class="stext-107 cl7 hov-cl1 trans-04">
-								Tote-bags
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Aide
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="shipping.html" class="stext-107 cl7 hov-cl1 trans-04">
-								Délais de livraison
-							</a>
-						</li>
-						<li class="p-b-10">
-							<a href="faq.html" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-						<li class="p-b-10">
-							<a href="conditions.html" class="stext-107 cl7 hov-cl1 trans-04">
-								Conditions d'utilisation
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Nous contacter
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Si vous avez la moindre question, n'hésitez pas à nous contacter sur <a href="https://instagram.com/esimerch" target="_blank">Instagram</a> !
-					</p>
-
-					<div class="p-t-27">
-						<a href="mailto:esimerch1@gmail.com" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-envelope"></i>
-						</a>
-
-						<a href="https://instagram.com/esimerch" target="_blank" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-youtube-play"></i>
-						</a>
-
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Accès au google form
-					</h4>
-
-					<form>
-						<div class="p-t-18">
-							<button onclick="redirect()" class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Commander
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="p-t-40">
-
-
-
-				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Esimerch can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | Fais avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="https://esimerch.fr" target="_blank">Esimerch</a> &amp; distribué par <a href="https://esimerch.fr" target="_blank">Esimerch.</a> Un grand merci à <a href="https://esimerch.fr" target="_blank">Esimerch</a> pour l'aide ! 
-<!-- Link back to Esimerch can't be removed. Template is licensed under CC BY 3.0. -->
-
-				</p>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-	<!-- Modal1 -->
-	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-		<div class="overlay-modal1 js-hide-modal1"></div>
-
-		<div class="container">
-			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
-					<img src="images/icons/icon-close.png" alt="CLOSE">
-				</button>
-
-				<div class="row">
-					<div class="col-md-6 col-lg-7 p-b-30">
-						<div class="p-l-25 p-r-30 p-lr-0-lg">
-							<div class="wrap-slick3 flex-sb flex-w">
-								<div class="wrap-slick3-dots"></div>
-								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
-								<div class="slick3 gallery-lb">
-									<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-01.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-
-									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
-										<div class="wrap-pic-w pos-relative">
-											<img src="images/product-detail-03.jpg" alt="IMG-PRODUCT">
-
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-03.jpg">
-												<i class="fa fa-expand"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-5 p-b-30">
-						<div class="p-r-50 p-t-5 p-lr-0-lg">
-							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-								Lightweight Jacket
-							</h4>
-
-							<span class="mtext-106 cl2">
-								$58.79
-							</span>
-
-							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-							</p>
-							
-							<!--  -->
-							<div class="p-t-33">
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Size
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Size S</option>
-												<option>Size M</option>
-												<option>Size L</option>
-												<option>Size XL</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-203 flex-c-m respon6">
-										Color
-									</div>
-
-									<div class="size-204 respon6-next">
-										<div class="rs1-select2 bor8 bg0">
-											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Red</option>
-												<option>Blue</option>
-												<option>White</option>
-												<option>Grey</option>
-											</select>
-											<div class="dropDownSelect2"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-204 flex-w flex-m respon6-next">
-										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
-										</button>
-									</div>
-								</div>	
-							</div>
-
-							<!--  -->
-							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-								<div class="flex-m bor9 p-r-10 m-r-11">
-									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-										<i class="zmdi zmdi-favorite"></i>
-									</a>
-								</div>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-									<i class="fa fa-facebook"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-									<i class="fa fa-twitter"></i>
-								</a>
-
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function(){
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
-	<script>
-        $('.parallax100').parallax100();
-		function redirect(){
-			window.open("https://forms.gle/zqKG2WfQHJoiLQTp8", "_blank");
-		}
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-	<script>
-		$('.gallery-lb').each(function() { // the containers for all your galleries
-			$(this).magnificPopup({
-		        delegate: 'a', // the selector for gallery item
-		        type: 'image',
-		        gallery: {
-		        	enabled:true
-		        },
-		        mainClass: 'mfp-fade'
-		    });
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2').on('click', function(e){
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			$(this).css('position','relative');
-			$(this).css('overflow','hidden');
-			var ps = new PerfectScrollbar(this, {
-				wheelSpeed: 1,
-				scrollingThreshold: 1000,
-				wheelPropagation: false,
-			});
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-</body>
-</html>
+<body>
+  <div class="container">
+    <img src="images/icons/logo_NB.png" alt="logo esimerch">
+    <h1>Esimerch revient en 2025</h1>
+    <h2>Restez informé sur Instagram @esimerch</h2>
+    <div id="countdown"></div>
+    <a href="https://www.instagram.com/esimerch" target="_blank" style="color:white;">
+  <i class="fab fa-instagram" style="font-size: 50px;"></i>
+</a>
+
+
+    
+  </div>
+  
+  <!-- <script>
+    function updateCountdown() {
+      const targetDate = new Date("November 4, 2024 16:30:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (timeLeft < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "Esierch is here!";
+      }
+    }
+
+    function sendData(){
+    var request = new XMLHttpRequest();
+    var url = 'https://discord.com/api/webhooks/1221932777499263158/ThVWkczP3AK6wKPqbtAucU6m5AULUA-TD1RhwaqyUaJPmm3h7d7p_owAQbPPEHsYGlos';
+    request.open("POST", url);
+    request.setRequestHeader('Content-type', 'application/json');
+
+
+    const params = {
+        username: "Esimerch", 
+        embeds: [
+            {
+                title: "Esimerch",
+                color: 993399, 
+                timestamp: new Date()
+            }
+        ]
+    };
+
+    request.send(JSON.stringify(params));
+}
+sendData();
+
+    updateCountdown();
+    const countdownTimer = setInterval(updateCountdown, 1000);
+  </script> -->
+</body></html>
+
+
+<!-- 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⣔⣲⣖⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⢿⣪⣵⣶⣶⣮⣝⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⣿⣿⡿⢉⡙⣟⠛⢿⣿⣟⡆⠀⠀⠀⠀⢀⣢⡔⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠌⣿⣿⣷⡘⢿⣼⣃⣾⣿⢯⠃⠀⠀⠀⡀⣶⣿⡝⠀⠀
+⠀⠀⠀⢀⣀⡀⠐⣮⣿⣼⣧⣿⣿⣿⣿⣿⣿⣿⢿⣥⢶⣦⢀⣦⣿⡿⢏⠐⠀⠀
+⠀⣤⣿⣿⢶⠟⡀⢈⠡⣯⣿⣷⣿⣿⣿⣿⣿⣿⣷⣿⡿⣷⣿⡿⡏⠃⠀⠀⠀⠀
+⠀⠻⣷⣿⢯⣾⣵⣿⣶⣿⣶⣾⣿⣷⣿⣯⣷⣿⣻⣿⡿⢿⣿⣾⣷⡷⠎⠀⠀⠀
+⠀⠀⠀⠈⠉⠉⣉⡩⣭⣯⣽⣿⣯⣿⣷⣿⢿⣏⡿⢿⡿⣿⣿⣶⣥⣾⣴⣶⣤⠀
+⠀⠀⠀⣀⢶⣽⣶⢿⡟⠿⠙⠓⣉⣘⣙⣫⢿⣿⣿⣆⠉⠑⠋⠛⠹⢋⠛⠙⠊⠄
+⠀⠀⠀⠘⠋⠛⠈⠁⠀⠀⢼⠿⡷⢿⠿⡿⢿⣟⠻⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈⠀⠀⠀⠀⠀⠀⠀⠀
+Copyright Esimerch 2025-2026
+-->
