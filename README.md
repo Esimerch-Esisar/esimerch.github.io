@@ -73,7 +73,7 @@ Retourner sur la Pull request (Onglet Pull requests > Closed) puis cliquer sur `
 2.  **Membres entrants** :
     -   Créent un compte GitHub perso si besoin.
     -   Sont ajoutés dans l’organisation `Esimerch-Esisar` :
-        -   1 membre en tant qu’**Owner** (responsable promo).
+        -   1 membre en tant qu’**Owner**.
         -   Les autres dans la team `web`.
         - **Le compte Github `esimerch` doit rester _Owner_ de l’organisation (même si aucun étudiant ne s’en sert directement), comme filet de sécurité.**
 3.  **Documentation** :       
