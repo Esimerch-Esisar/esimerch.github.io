@@ -12,7 +12,7 @@ const LOGO_SRC = logo;
 //   { id: "p4", name: "Mousepad Crystal Grid", price: "19,90 €", tags: ["accessoires", "bureau"], description: "Tapis de souris XL, base antidérapante, bord cousu, design géométrique.", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" },
 // ];
 const DEMO_PRODUCTS = [
-  { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "https://images.unsplash.com/photo-1548883354-7622d03aca29?q=80&w=1200&auto=format&fit=crop" }
+  { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "url_here" }
 ]
 
 
@@ -44,7 +44,7 @@ export default function ShowcaseSite() {
             <a href="#apropos" className="hover:text-violet-700 transition-colors">À propos</a>
             <a href="#contact" className="hover:text-violet-700 transition-colors">Contact</a>
           </nav>
-          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScyOPXon3mr4aobryx-jSAtyyv0CN1GD1AtZHcL_2RHy5dplg/viewform?usp=header" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a>
+          <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a>
         </div>
       </header>
 
@@ -64,7 +64,7 @@ export default function ShowcaseSite() {
                 Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScyOPXon3mr4aobryx-jSAtyyv0CN1GD1AtZHcL_2RHy5dplg/viewform?usp=header" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
                 </a>
                 {/* <a href="#contact" className="rounded-2xl ring-1 ring-neutral-300 px-5 py-3 font-medium hover:bg-neutral-50 transition-colors">
