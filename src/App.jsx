@@ -3,17 +3,27 @@ import { ShoppingBag, Search, ChevronRight } from "lucide-react";
 
 import logo from "./assets/logo-01.png";
 const LOGO_SRC = logo;
+import mug from "./assets/mug.png";
+import flasque from "./assets/flasque.jpg";
+import tapis from "./assets/tapis_souris.png";
+import gourde from "./assets/gourde.jpg";
+import decapsuleur from "./assets/decapsuleur_logo.jpg";
+import plaid from "./assets/plaid.png";
+import couverts from "./assets/couverts.png";
+
 
 // 🎯 Demo product data — replace with your real items
-// const DEMO_PRODUCTS = [
-//   { id: "p1", name: "Crystal Hoodie", price: "49,90 €", badge: "Nouveauté", tags: ["textile", "streetwear"], description: "Sweat à capuche coupe unisexe, impression violet profond, coton bio 300 g/m².", image: "https://images.unsplash.com/photo-1548883354-7622d03aca29?q=80&w=1200&auto=format&fit=crop" },
-//   { id: "p2", name: "Sticker Pack — Violet Shards", price: "5,00 €", badge: "Best-seller", tags: ["stickers", "goodies"], description: "Lot de 6 stickers vinyle résistants à l’eau, finition mate, formats variés.", image: "https://images.unsplash.com/photo-1620484912022-9b8b2cd5e7f9?q=80&w=1200&auto=format&fit=crop" },
-//   { id: "p3", name: "Tote Bag Améthyste", price: "14,90 €", tags: ["goodies", "textile"], description: "Tote bag robuste 320 g/m², sérigraphie violet, anses longues.", image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop" },
-//   { id: "p4", name: "Mousepad Crystal Grid", price: "19,90 €", tags: ["accessoires", "bureau"], description: "Tapis de souris XL, base antidérapante, bord cousu, design géométrique.", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" },
-// ];
 const DEMO_PRODUCTS = [
-  { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "url_here" }
-]
+  { id: "1", name: "Gourde", price: "16,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
+  { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour boire votre café, ou un bon chocolat chaud.", image: mug},
+  { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "Nouveauté", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
+  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse.", image: flasque},
+  { id: "5", name: "Tapis de souris", price: "14,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
+  { id: "6", name: "Plaid", price: "28,00 €", badge: "Nouveauté", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
+];
+// const DEMO_PRODUCTS = [
+//   { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "url_here" }
+// ]
 
 
 export default function ShowcaseSite() {
@@ -40,11 +50,12 @@ export default function ShowcaseSite() {
             <span className="font-semibold tracking-tight text-violet-700">Esimerch</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            {/* <a href="#produits" className="hover:text-violet-700 transition-colors">Produits</a> */}
+            <a href="#produits" className="hover:text-violet-700 transition-colors">Produits</a>
             <a href="#apropos" className="hover:text-violet-700 transition-colors">À propos</a>
             <a href="#contact" className="hover:text-violet-700 transition-colors">Contact</a>
           </nav>
-          <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a>
+          {/* <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a> */}
+          <a target="_blank" href="http://commande.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
         </div>
       </header>
 
@@ -55,21 +66,22 @@ export default function ShowcaseSite() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 ring-1 ring-violet-200">
-                <ShoppingBag className="h-3.5 w-3.5" />Phase 1 : Sondage
+                <ShoppingBag className="h-3.5 w-3.5" />Phase 2 : Commande
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
-                <span className="text-violet-700">Esimerch</span> revient bientôt !
+                <span className="text-violet-700">Esimerch</span> est de retour !
               </h1>
               <p className="mt-4 text-neutral-600 max-w-prose">
-                Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes.
+                {/* Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes. */}
+                La nouvelle collection Hiver 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                {/* <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
-                </a>
-                {/* <a href="#contact" className="rounded-2xl ring-1 ring-neutral-300 px-5 py-3 font-medium hover:bg-neutral-50 transition-colors">
-                  Passer commande
                 </a> */}
+                <a href="commande.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                  Passer commande
+                </a> 
               </div>
             </div>
             <div className="relative">
@@ -84,14 +96,13 @@ export default function ShowcaseSite() {
         </div>
       </section>
 
-      {/* Produits
+      {/* Produits */}
       <section id="produits" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Produits</h2>
-            <p className="text-neutral-600 mt-1">Ajoutez / modifiez vos fiches dans le tableau JS (DEMO_PRODUCTS).</p>
           </div>
-
+          <p><i>Visuels non contractuels</i></p>
           <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
             <div className="flex items-center gap-2 rounded-2xl ring-1 ring-neutral-300 px-3 py-2 w-full sm:w-80 bg-white">
               <Search className="h-4 w-4 text-neutral-500" />
@@ -111,7 +122,7 @@ export default function ShowcaseSite() {
         </div>
 
         {/* Grid */}
-        {/* 
+        
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((p) => (
             <article key={p.id} className="group rounded-2xl ring-1 ring-neutral-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
@@ -138,21 +149,20 @@ export default function ShowcaseSite() {
           ))}
         </div>
       </section> 
-      */}
+      
 
       {/* À propos */}
       <section id="apropos" className="bg-gradient-to-b from-white to-violet-50/40 py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">À propos d'Esimerch</h2>
-            <p className="mt-3 text-neutral-700">Esimerch est un projet étudiant de Grenoble INP - Esisar ayant pour objectif de financer en partie le <b>Stage Ski Etude</b> des 1A et 2A. Pour cela, nous vous proposerons bientôt la vente de merch aux couleurs de notre école et de notre belle mascotte Poulpy ! </p>
+            <p className="mt-3 text-neutral-700">Esimerch est un projet étudiant de Grenoble INP - Esisar ayant pour objectif de financer en partie le <b>Stage Ski Etude</b> des 1A et 2A. Pour cela, nous vous proposons la vente de merch aux couleurs de notre école et de notre belle mascotte Poulpy ! </p>
           </div>
           <div className="rounded-2xl ring-1 ring-neutral-200 bg-white p-6 shadow-sm">
             <div className="flex items-center gap-4">
               <img src={LOGO_SRC} alt="Logo" className="h-12 w-12" />
               <div>
                 <p className="font-semibold">L'équipe 2025-2026</p>
-                <p className="text-sm text-neutral-600">Trust</p>
               </div>
             </div>
           </div>
@@ -164,11 +174,11 @@ export default function ShowcaseSite() {
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Passer une commande</h2>
-            <p className="mt-2 text-neutral-700">Les commandes ouvriront bientôt. Restez informés.</p>
+            <p className="mt-2 text-neutral-700">Paiement par carte ou par virement <br /> <b>FR76 3000 3021 6000 0372 6526 741</b> en précisant dans le motif : <b>SSE-Esimerch-NomPrénom</b> Par exemple : SSE-Esimerch-MichuLulu</p>
             <div className="mt-6">
-              {/* <a href="https://forms.gle/votreLienIci" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
-                Ouvrir le formulaire Google Form
-              </a> */}
+              <a href="https://forms.gle/votreLienIci" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
+                Commander
+              </a>
             </div>
           </div>
           <div className="rounded-2xl ring-1 ring-neutral-200 bg-gradient-to-br from-violet-600 to-violet-800 text-white p-6">
