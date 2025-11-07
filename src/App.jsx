@@ -15,7 +15,7 @@ import couverts from "./assets/couverts.png";
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
   { id: "1", name: "Gourde", price: "16,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
-  { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour boire votre café, ou un bon chocolat chaud.", image: mug},
+  { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
   { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "Nouveauté", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
   { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse.", image: flasque},
   { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
