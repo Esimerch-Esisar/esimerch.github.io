@@ -18,7 +18,7 @@ const DEMO_PRODUCTS = [
   { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour boire votre café, ou un bon chocolat chaud.", image: mug},
   { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "Nouveauté", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
   { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse.", image: flasque},
-  { id: "5", name: "Tapis de souris", price: "14,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
+  { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
   { id: "6", name: "Plaid", price: "28,00 €", badge: "Nouveauté", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
 ];
 // const DEMO_PRODUCTS = [
@@ -55,7 +55,7 @@ export default function ShowcaseSite() {
             <a href="#contact" className="hover:text-violet-700 transition-colors">Contact</a>
           </nav>
           {/* <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a> */}
-          <a target="_blank" href="http://commande.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
         </div>
       </header>
 
@@ -79,7 +79,7 @@ export default function ShowcaseSite() {
                 {/* <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
                 </a> */}
-                <a href="commande.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Passer commande
                 </a> 
               </div>
@@ -176,7 +176,7 @@ export default function ShowcaseSite() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Passer une commande</h2>
             <p className="mt-2 text-neutral-700">Paiement par carte ou par virement <br /> <b>FR76 3000 3021 6000 0372 6526 741</b> en précisant dans le motif : <b>SSE-Esimerch-NomPrénom</b> Par exemple : SSE-Esimerch-MichuLulu</p>
             <div className="mt-6">
-              <a href="https://forms.gle/votreLienIci" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
                 Commander
               </a>
             </div>
