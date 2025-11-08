@@ -9,8 +9,8 @@ import tapis from "./assets/tapis_souris.png";
 import gourde from "./assets/gourde.jpg";
 import decapsuleur from "./assets/decapsuleur_logo.jpg";
 import plaid from "./assets/plaid.png";
-import couverts from "./assets/couverts.png";
-
+import porte from "./assets/porte.png";
+import fenetre from "./assets/fenetre.jpg";
 
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
@@ -20,6 +20,9 @@ const DEMO_PRODUCTS = [
   { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse.", image: flasque},
   { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
   { id: "6", name: "Plaid", price: "28,00 €", badge: "Nouveauté", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
+  { id: "7", name: "Portes", price: "500,00 €", badge: "", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
+  { id: "8", name: "Fenêtres", price: "399,00 €", badge: "Nouveauté", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
+
 ];
 // const DEMO_PRODUCTS = [
 //   { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "url_here" }
