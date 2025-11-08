@@ -17,7 +17,7 @@ const DEMO_PRODUCTS = [
   { id: "1", name: "Gourde", price: "16,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
   { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
   { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "Nouveauté", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
-  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse.", image: flasque},
+  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse. Environ 200mL.", image: flasque},
   { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
   { id: "6", name: "Plaid", price: "28,00 €", badge: "Nouveauté", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
   { id: "7", name: "Portes", price: "500,00 €", badge: "", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
