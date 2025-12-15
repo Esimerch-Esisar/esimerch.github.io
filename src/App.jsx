@@ -69,22 +69,25 @@ export default function ShowcaseSite() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 ring-1 ring-violet-200">
-                <ShoppingBag className="h-3.5 w-3.5" />Phase 2 : Commande
+                <ShoppingBag className="h-3.5 w-3.5" />Phase 3 : Réception
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
-                <span className="text-violet-700">Esimerch</span> est de retour !
+                {/* <span className="text-violet-700">Esimerch</span> est de retour ! */}
+                Vos commandes <span className="text-violet-700">Esimerch</span> sont prêtes !
               </h1>
               <p className="mt-4 text-neutral-600 max-w-prose">
                 {/* Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes. */}
-                La nouvelle collection Hiver 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy.
+                {/* La nouvelle collection Hiver 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy. */}
+                Vos commandes esimerch sont arrivées ! Venez vite les récuperer tous les midis dans le batiment A. Retrouvez toutes les informations dans le mail qui vous a été envoyé.
               </p>
+              <p className="mt-4 text-neutral-600 max-w-prose">Vous avez manqué la pré-commande ? Pas de panique, Esimerch reviendra au printemps.</p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 {/* <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
                 </a> */}
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                {/* <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Passer commande
-                </a> 
+                </a>  */}
               </div>
             </div>
             <div className="relative">
