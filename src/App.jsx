@@ -11,17 +11,19 @@ import decapsuleur from "./assets/decapsuleur_logo.jpg";
 import plaid from "./assets/plaid.png";
 import porte from "./assets/porte.png";
 import fenetre from "./assets/fenetre.jpg";
+import totebag from "./assets/totebag.jpg";
 
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
-  { id: "1", name: "Gourde", price: "16,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
-  { id: "2", name: "Mug", price: "14,00 €", badge: "Nouveauté", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
-  { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "Nouveauté", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
-  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "Nouveauté", description: "Boisson non incluse. Environ 200mL.", image: flasque},
-  { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "Nouveauté", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
-  { id: "6", name: "Plaid", price: "28,00 €", badge: "Nouveauté", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
-  { id: "7", name: "Portes", price: "500,00 €", badge: "", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
-  { id: "8", name: "Fenêtres", price: "399,00 €", badge: "Nouveauté", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
+  { id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
+  { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
+  { id: "2", name: "Mug", price: "14,00 €", badge: "RUPTURE DE STOCK", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
+  { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "RUPTURE DE STOCK", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
+  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "RUPTURE DE STOCK", description: "Boisson non incluse. Environ 200mL.", image: flasque},
+  { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "RUPTURE DE STOCK", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
+  { id: "6", name: "Plaid", price: "28,00 €", badge: "RUPTURE DE STOCK", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
+  { id: "7", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
+  { id: "8", name: "Fenêtres", price: "399,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
 
 ];
 // const DEMO_PRODUCTS = [
@@ -69,16 +71,17 @@ export default function ShowcaseSite() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 ring-1 ring-violet-200">
-                <ShoppingBag className="h-3.5 w-3.5" />Phase 3 : Réception
+                <ShoppingBag className="h-3.5 w-3.5" />Phase 4 : JPO
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
                 {/* <span className="text-violet-700">Esimerch</span> est de retour ! */}
-                Vos commandes <span className="text-violet-700">Esimerch</span> sont prêtes !
+                Retrouvez <span className="text-violet-700">Esimerch</span> à la Journée Porte Ouverte !
               </h1>
               <p className="mt-4 text-neutral-600 max-w-prose">
                 {/* Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes. */}
                 {/* La nouvelle collection Hiver 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy. */}
-                Vos commandes esimerch sont arrivées ! Venez vite les récuperer tous les midis dans le batiment A. Retrouvez toutes les informations dans le mail qui vous a été envoyé.
+                {/* Vos commandes esimerch sont arrivées ! Venez vite les récuperer tous les midis dans le batiment A. Retrouvez toutes les informations dans le mail qui vous a été envoyé. */}
+                A l'occasion de la JPO de Grenoble INP - Esisar,  Esimerch sera présent à la KFET (B045), à gauche en rentrant, le 28 février 2026. 
               </p>
               <p className="mt-4 text-neutral-600 max-w-prose">Vous avez manqué la pré-commande ? Pas de panique, Esimerch reviendra au printemps.</p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -163,6 +166,7 @@ export default function ShowcaseSite() {
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">À propos d'Esimerch</h2>
             <p className="mt-3 text-neutral-700">Esimerch est un projet étudiant de Grenoble INP - Esisar ayant pour objectif de financer en partie le <b>Stage Ski Etude</b> des 1A et 2A. Pour cela, nous vous proposons la vente de merch aux couleurs de notre école et de notre belle mascotte Poulpy ! </p>
+            <p className="mt-3 text-neutral-700">Le SSE (Stage Ski Etude) est une semaine de révision juste avant les partiels de Janvier, à la station de ski du Collet d'Allevard. Le matin, des cours de révision sont mis en place par les profs, les après-midi sont libres (ski, snowboard, marche, etc). Esimerch finance en partie le stage pour que tous les étudiants puissent venir.</p>  
           </div>
           <div className="rounded-2xl ring-1 ring-neutral-200 bg-white p-6 shadow-sm">
             <div className="flex items-center gap-4">
