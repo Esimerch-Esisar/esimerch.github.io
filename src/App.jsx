@@ -12,16 +12,18 @@ import plaid from "./assets/plaid.png";
 import porte from "./assets/porte.png";
 import fenetre from "./assets/fenetre.jpg";
 import totebag from "./assets/totebag.jpg";
-import stickers from "./assets/stickers.png";
+import stickers from "./assets/stickers.jpg";
 import polo from "./assets/polo.jpg";
+import polo_noir from "./assets/polo_noir.jpg";
 import casquette from "./assets/casquette.jpg";
 import feur from "./assets/feur.jpg";
 
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
   { id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
-  { id: "2", name: "Planche de Stickers", price: "8,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "800 mL", image: stickers},
-  { id: "3", name: "Polo", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur blanc", image: polo},
+  { id: "2", name: "Planche de Stickers", price: "10,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "800 mL", image: stickers},
+  { id: "3", name: "Polo blanc", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur blanc", image: polo},
+  { id: "3", name: "Polo noir", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur noir", image: polo_noir},
   { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
   { id: "9", name: "Casquette", price: "12,00 €", badge: "", tags: ["Textile"], description: "", image: casquette},
   { id: "7", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
@@ -68,7 +70,7 @@ export default function ShowcaseSite() {
             <a href="#contact" className="hover:text-violet-700 transition-colors">Contact</a>
           </nav>
           {/* <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a> */}
-          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdCQxFeAAlW_uff_gZ6ym6Z5VGQ_bKLHzp4iHrQungnKBNSVg/viewform" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
         </div>
       </header>
 
@@ -79,26 +81,26 @@ export default function ShowcaseSite() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 ring-1 ring-violet-200">
-                <ShoppingBag className="h-3.5 w-3.5" />Phase 4 : JPO
+                <ShoppingBag className="h-3.5 w-3.5" />Phase 5 : Collection Printemps
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
-                {/* <span className="text-violet-700">Esimerch</span> est de retour ! */}
-                Retrouvez <span className="text-violet-700">Esimerch</span> à la Journée Porte Ouverte !
+                <span className="text-violet-700">Esimerch</span> est de retour !
+                {/* Retrouvez <span className="text-violet-700">Esimerch</span> à la Journée Porte Ouverte ! */}
               </h1>
               <p className="mt-4 text-neutral-600 max-w-prose">
                 {/* Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes. */}
-                {/* La nouvelle collection Hiver 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy. */}
+                La nouvelle collection Printemps 2025-2026 est de retour sur Esimerch ! Commandez dès maintenant vos articles préférés aux couleurs de l'Esisar et de notre mascotte Poulpy.
                 {/* Vos commandes esimerch sont arrivées ! Venez vite les récuperer tous les midis dans le batiment A. Retrouvez toutes les informations dans le mail qui vous a été envoyé. */}
-                A l'occasion de la JPO de Grenoble INP - Esisar,  Esimerch sera présent à la KFET (B045), à gauche en rentrant, le 28 février 2026. 
+                {/* A l'occasion de la JPO de Grenoble INP - Esisar,  Esimerch sera présent à la KFET (B045), à gauche en rentrant, le 28 février 2026.  */}
               </p>
-              <p className="mt-4 text-neutral-600 max-w-prose">Vous avez manqué la pré-commande ? Pas de panique, Esimerch reviendra au printemps.</p>
+              {/* <p className="mt-4 text-neutral-600 max-w-prose">Vous avez manqué la pré-commande ? Pas de panique, Esimerch reviendra au printemps.</p> */}
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 {/* <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
                 </a> */}
-                {/* <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Passer commande
-                </a>  */}
+                </a> 
               </div>
             </div>
             <div className="relative">
