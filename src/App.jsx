@@ -12,18 +12,26 @@ import plaid from "./assets/plaid.png";
 import porte from "./assets/porte.png";
 import fenetre from "./assets/fenetre.jpg";
 import totebag from "./assets/totebag.jpg";
+import stickers from "./assets/stickers.png";
+import polo from "./assets/polo.jpg";
+import casquette from "./assets/casquette.jpg";
+import feur from "./assets/feur.jpg";
 
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
   { id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
+  { id: "2", name: "Planche de Stickers", price: "8,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "800 mL", image: stickers},
+  { id: "3", name: "Polo", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur blanc", image: polo},
   { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
-  { id: "2", name: "Mug", price: "14,00 €", badge: "RUPTURE DE STOCK", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
-  { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "RUPTURE DE STOCK", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
-  { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "RUPTURE DE STOCK", description: "Boisson non incluse. Environ 200mL.", image: flasque},
-  { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "RUPTURE DE STOCK", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
-  { id: "6", name: "Plaid", price: "28,00 €", badge: "RUPTURE DE STOCK", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
+  { id: "9", name: "Casquette", price: "12,00 €", badge: "", tags: ["Textile"], description: "", image: casquette},
   { id: "7", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
   { id: "8", name: "Fenêtres", price: "399,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
+  { id: "2", name: "Sticker Feur", price: "5,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "Pour notre CIE préféré", image: feur, externalLink: "https://share.google/36NVn1h5La2X9uvQy" },
+  // { id: "2", name: "Mug", price: "14,00 €", badge: "RUPTURE DE STOCK", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
+  // { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "RUPTURE DE STOCK", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
+  // { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "RUPTURE DE STOCK", description: "Boisson non incluse. Environ 200mL.", image: flasque},
+  // { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "RUPTURE DE STOCK", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
+  // { id: "6", name: "Plaid", price: "28,00 €", badge: "RUPTURE DE STOCK", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
 
 ];
 // const DEMO_PRODUCTS = [
@@ -152,6 +160,27 @@ export default function ShowcaseSite() {
                 </div>
                 <div className="mt-4 flex items-center justify-between">
                   <a href="#contact" className="text-sm font-medium text-violet-700 hover:text-violet-800 inline-flex items-center gap-1">Demander infos <ChevronRight className="h-4 w-4" /></a>
+                </div>
+                <div className="mt-4 flex items-center justify-between">
+                  {p.externalLink ? (
+                    // Bouton spécifique pour le produit avec lien externe
+                    <a 
+                      href={p.externalLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="w-full text-center py-2 px-4 rounded-xl bg-violet-700 text-white text-sm font-medium hover:bg-violet-800 transition-colors flex items-center justify-center gap-2"
+                    >
+                      Acheter maintenant <ChevronRight className="h-4 w-4" />
+                    </a>
+                  ) : (
+                    // Lien classique pour les autres produits
+                    <a 
+                      href="#contact" 
+                      className="text-sm font-medium text-violet-700 hover:text-violet-800 inline-flex items-center gap-1"
+                    >
+                      Demander infos <ChevronRight className="h-4 w-4" />
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
