@@ -21,10 +21,10 @@ import feur from "./assets/feur.jpg";
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
   { id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
-  { id: "2", name: "Planche de Stickers", price: "10,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "800 mL", image: stickers},
+  { id: "2", name: "Planche de Stickers", price: "10,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "", image: stickers},
   { id: "3", name: "Polo blanc", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur blanc", image: polo},
-  { id: "3", name: "Polo noir", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur noir", image: polo_noir},
-  { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
+  { id: "3", name: "Polo bleu", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur bleu", image: polo_noir},
+  // { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
   { id: "9", name: "Casquette", price: "12,00 €", badge: "", tags: ["Textile"], description: "", image: casquette},
   { id: "7", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
   { id: "8", name: "Fenêtres", price: "399,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
