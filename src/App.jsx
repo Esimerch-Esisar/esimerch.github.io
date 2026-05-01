@@ -70,7 +70,7 @@ export default function ShowcaseSite() {
             <a href="#contact" className="hover:text-violet-700 transition-colors">Contact</a>
           </nav>
           {/* <a target="_blank" href="http://sondage.esimerch.fr" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Remplir le sondage</a> */}
-          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdCQxFeAAlW_uff_gZ6ym6Z5VGQ_bKLHzp4iHrQungnKBNSVg/viewform" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
+          <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdCQxFeAAlW_uff_gZ6ym6Z5VGQ_bKLHzp4iHrQungnKBNSVg/viewform?usp=preview" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-violet-800 transition-colors">Commander</a>
         </div>
       </header>
 
