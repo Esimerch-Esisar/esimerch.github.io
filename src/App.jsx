@@ -98,7 +98,7 @@ export default function ShowcaseSite() {
                 {/* <a target="_blank" href="http://sondage.esimerch.fr" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Remplir le sondage 
                 </a> */}
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCQxFeAAlW_uff_gZ6ym6Z5VGQ_bKLHzp4iHrQungnKBNSVg/viewform" className="rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800 transition-colors inline-flex items-center gap-2">
                   Passer commande
                 </a> 
               </div>
@@ -217,7 +217,7 @@ export default function ShowcaseSite() {
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Passer une commande</h2>
             <p className="mt-2 text-neutral-700">Paiement par carte ou par virement <br /> <b>FR76 3000 3021 6000 0372 6526 741</b> en précisant dans le motif : <b>SSE-Esimerch-NomPrénom</b> Par exemple : SSE-Esimerch-MichuLulu</p>
             <div className="mt-6">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSebED-OUEfa0O_tbKuZqJH65GeP3JUvZ2MaZrLhm3jcAPVLZg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCQxFeAAlW_uff_gZ6ym6Z5VGQ_bKLHzp4iHrQungnKBNSVg/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-violet-700 px-5 py-3 text-white font-medium shadow-sm hover:bg-violet-800">
                 Commander
               </a>
             </div>
