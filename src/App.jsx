@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { ShoppingBag, Search, ChevronRight } from "lucide-react";
 
-import logo from "./assets/logo-01.png";
+import logo from "./assets/logo_26-27.png";
 const LOGO_SRC = logo;
 import mug from "./assets/mug.png";
 import flasque from "./assets/flasque.jpg";
