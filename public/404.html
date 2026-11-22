@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Erreur 404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f9f7ff;
+        font-family: system-ui, sans-serif;
+        color: #4c1d95; /* violet foncé */
+      }
+      .card {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 1rem;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
+      p {
+        margin-top: 0.5rem;
+        font-size: 1.1rem;
+      }
+      .spinner {
+        margin: 1.5rem auto 0;
+        border: 4px solid #e9d5ff;
+        border-top: 4px solid #7c3aed;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <script>
+      // Redirige automatiquement vers la racine
+      setTimeout(() => {
+        window.location.replace("/");
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <h1>404</h1>
+      <p>Oups, cette page n’existe pas.<br />Redirection vers esimerch.fr</p>
+      <div class="spinner"></div>
+    </div>
+  </body>
+</html>
