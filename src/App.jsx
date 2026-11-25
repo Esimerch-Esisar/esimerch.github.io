@@ -3,39 +3,40 @@ import { ShoppingBag, Search, ChevronRight } from "lucide-react";
 
 import logo from "./assets/logo_26-27.png";
 const LOGO_SRC = logo;
+
 import mug from "./assets/mug.png";
-import flasque from "./assets/flasque.jpg";
-import tapis from "./assets/tapis_souris.png";
 import gourde from "./assets/gourde.jpg";
-import decapsuleur from "./assets/decapsuleur_logo.jpg";
-import plaid from "./assets/plaid.png";
+import totebag from "./assets/totebag.jpg";
+import tapis from "./assets/tapis_souris.png";
 import porte from "./assets/porte.png";
 import fenetre from "./assets/fenetre.jpg";
-import totebag from "./assets/totebag.jpg";
-import stickers from "./assets/stickers.jpg";
-import polo from "./assets/polo.jpg";
-import polo_noir from "./assets/polo_noir.jpg";
-import casquette from "./assets/casquette.jpg";
-import feur from "./assets/feur.jpg";
+import sixseven from "./assets/porte-cle.jpeg";
+import veste from "./assets/veste.png";
+import pommeau from "./assets/pommeau_douche.jpg";
+
+//import stickers from "./assets/stickers.jpg";
+//import polo from "./assets/polo.jpg";
+//import polo_noir from "./assets/polo_noir.jpg";
+//import casquette from "./assets/casquette.jpg";
 
 // 🎯 Demo product data — replace with your real items
 const DEMO_PRODUCTS = [
-  //{ id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
+  { id: "1", name: "Gourde", price: "15,00 €", badge: "", tags: ["Boissons"], description: "800 mL", image: gourde},
+  { id: "2", name: "Tote-bag", price: "8,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
+  { id: "3", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
+  { id: "4", name: "Fenêtres", price: "399,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
+  { id: "5", name: "Pommeau de douche", price: "670,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Accessoire indispensable pour les douches du SSE. Lavez-vous svp.", image: pommeau},
+  { id: "6", name: "Porte-clé 67", price: "6.70 €", badge: "Nouveauté", tags: ["Accessoires"], description: "MDRRRRRR", image: sixseven},
+  { id: "7", name: "Mug", price: "14,00 €", badge: "", tags: ["Boissons"], description: "Pour offrir à votre prof de méca préféré.", image: mug},// { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "RUPTURE DE STOCK", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
+  { id: "8", name: "Tapis de souris", price: "12,00 €", badge: "", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
+  { id: "9", name: "Veste", price: "30,00 €", badge: "", tags: ["Textile"], description: "", image: veste},
+
+  //{ id: "9", name: "Casquette", price: "12,00 €", badge: "", tags: ["Textile"], description: "", image: casquette},
   //{ id: "2", name: "Planche de Stickers", price: "10,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "", image: stickers},
   //{ id: "3", name: "Polo blanc", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur blanc", image: polo},
   //{ id: "3", name: "Polo bleu", price: "18,00 €", badge: "", tags: ["Textile"], description: "Couleur bleu", image: polo_noir},
-  // { id: "9", name: "Tote-bag", price: "7,00 €", badge: "", tags: ["Textile"], description: "", image: totebag},
-  //{ id: "9", name: "Casquette", price: "12,00 €", badge: "", tags: ["Textile"], description: "", image: casquette},
-  //{ id: "7", name: "Portes", price: "500,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Construiez votre maison avec les portes Esimerch.", image: porte},
-  //{ id: "8", name: "Fenêtres", price: "399,00 €", badge: "RUPTURE DE STOCK", tags: ["Menuiserie"], description: "Des portes, c'est bien. Des fenêtres, c'est mieux.", image: fenetre},
-  //{ id: "2", name: "Sticker Feur", price: "5,00 €", badge: "Nouveauté", tags: ["Accessoires"], description: "Pour notre CIE préféré", image: feur, externalLink: "https://share.google/36NVn1h5La2X9uvQy" },
-  // { id: "2", name: "Mug", price: "14,00 €", badge: "RUPTURE DE STOCK", tags: ["Boissons"], description: "Pour offrir à votre prof d'élec préféré.", image: mug},
-  // { id: "3", name: "Décapsuleur", price: "6,50 €", badge: "RUPTURE DE STOCK", tags: ["Accessoires"], description: "On sait. Vous savez. On se sait.", image: decapsuleur},
-  // { id: "4", name: "Flasque", price: "15,00 €", tags: ["Boissons"], badge: "RUPTURE DE STOCK", description: "Boisson non incluse. Environ 200mL.", image: flasque},
-  // { id: "5", name: "Tapis de souris", price: "15,00 €", badge: "RUPTURE DE STOCK", tags: ["High Tech"], description: "Pour lancer vos meilleures game. Souris non inclue. Dimension : 22cm x 23cm", image: tapis},
-  // { id: "6", name: "Plaid", price: "28,00 €", badge: "RUPTURE DE STOCK", tags: ["Textile"], description: "Pour être au chaud tout l'hiver. Dimension : 120cm x 150cm", image: plaid},
-
 ];
+
 // const DEMO_PRODUCTS = [
 //   { id: "p1", name: "Aucun produit pour le moment", price: "", badge: "Nouveauté", tags: [], description: "", image: "url_here" }
 // ]
@@ -81,7 +82,7 @@ export default function ShowcaseSite() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 ring-1 ring-violet-200">
-                <ShoppingBag className="h-3.5 w-3.5" />Phase 0 : Mise en place
+                <ShoppingBag className="h-3.5 w-3.5" />Phase 1 : Commandes
               </span>
               <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">
                 <span className="text-violet-700">Esimerch</span> est de retour !
@@ -89,7 +90,7 @@ export default function ShowcaseSite() {
               </h1>
               <p className="mt-4 text-neutral-600 max-w-prose">
                 {/* Faites-nous part de vos envies en remplissant ce Gform. Promis, il ne vous prendra que 2 minutes. */}
-                La nouvelle collection d'hiver 2026-2027 sera bientôt de retour sur Esimerch !
+                La nouvelle collection d'hiver 2026-2027 est de retour sur Esimerch ! Dégaine ta carte au plus vite.
                 {/* Vos commandes esimerch sont arrivées ! Venez vite les récuperer tous les midis dans le batiment A. Retrouvez toutes les informations dans le mail qui vous a été envoyé. */}
                 {/* A l'occasion de la JPO de Grenoble INP - Esisar,  Esimerch sera présent à la KFET (B045), à gauche en rentrant, le 28 février 2026.  */}
               </p>
