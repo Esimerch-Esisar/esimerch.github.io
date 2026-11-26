@@ -4,7 +4,7 @@ import { ShoppingBag, Search, ChevronRight } from "lucide-react";
 import logo from "./assets/logo_26-27.png";
 const LOGO_SRC = logo;
 
-import mug from "./assets/mug.png";
+import mug from "./assets/mug.jpeg";
 import gourde from "./assets/gourde.jpg";
 import totebag from "./assets/totebag.jpg";
 import tapis from "./assets/tapis_souris.png";
